@@ -1,4 +1,19 @@
 import {extendTheme} from "@chakra-ui/react";
 import {colors} from "./Colors";
+import {mode} from "@chakra-ui/theme-tools"
+import {breakpoints} from "./Breakpoints";
 
-export const Theme = extendTheme({colors})
+export const Theme = extendTheme({
+    styles: {
+        global: (props) => ({
+            body: {
+                bg: mode("primary.20", "gray.900")(props),
+            }
+        })
+    },
+    colors,
+    breakpoints,
+    components: {
+
+    }
+})
