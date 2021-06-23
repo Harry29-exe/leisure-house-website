@@ -31,13 +31,13 @@ const VMainPage = () => {
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies posuere nibh, id ullamcorper orci gravida non. Vestibulum rhoncus imperdiet mauris, eu auctor est
                     pharetra dictum. Vivamus rutrum molestie felis sit amet ornare. Donec auctor felis ut elit dignissim varius. Morbi velit purus, lobortis imperdiet arcu quis, feugiat vestibulum massa.
                     Donec consectetur varius porttitor.
-                    <Image w='50%' src={img1} borderRadius={'lg'} filter={"drop-shadow(0 0 10px white)"} float={'left'} m={5}/>
+                    <Image w={['100%', null, '50%']} src={img1} borderRadius={'lg'} filter={"drop-shadow(0 0 10px white)"} float={['none', null, 'left']} m={['auto', null, 5]}/>
                     Curabitur elementum, massa at placerat sodales, diam risus cursus nisl, quis commodo tellus quam eu mi. Sed semper lacinia orci, ut tempor felis vulputate sit amet.
                     Duis id risus congue, lacinia eros eu, pharetra sem. Quisque varius id purus id eleifend. Aenean pretium euismod odio quis lobortis. Donec ut urna at felis sodales condimentum
                     a ac erat. Donec congue euismod dui, eget laoreet massa.
                     Quisque sed metus ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum at bibendum nisi. Cras sodales blandit tortor,
                     at tempus metus fermentum id. Aliquam dignissim nibh nec nibh fringilla, a ultricies sem faucibus. Integer placerat hendrerit eros, a suscipit metus porta sed.
-                <Image w='50%' src={img2} borderRadius={'lg'} filter={"drop-shadow(0 0 10px white)"} float={'right'} m={5}/>
+                    <Image w={['100%', null, '50%']} src={img2} borderRadius={'lg'} filter={"drop-shadow(0 0 10px white)"} float={['none', null, 'right']} m={['auto', null, 5]}/>
                     Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Vivamus orci nunc, porta vel urna sit amet, consequat dignissim urna. Curabitur ligula libero,
                     dictum non mollis in, convallis quis augue. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget bibendum mi, sed iaculis lacus. Aliquam eu auctor tortor. Nam sed tincidunt
                     arcu, ut elementum enim. Ut vitae arcu eu ante rutrum convallis.
