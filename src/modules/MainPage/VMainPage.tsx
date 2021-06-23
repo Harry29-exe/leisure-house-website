@@ -12,7 +12,7 @@ const VMainPage = () => {
     const bg = useColorModeValue("primary.20", "primary.900");
 
     return (
-        <VStack w='100%' bgImage={wood} backgroundRepeat={'repeat'} spacing={10}>
+        <VStack w='100%' spacing={10}>
             <VStack w='100%' spacing={0}>
                 <Box pos='relative' w='100%' h='200px' boxShadow={'0 3px 20px 3px black'}>
                     <Image src={main} pos='absolute' top={0} left={0} w='100%' h='100%'
@@ -46,7 +46,7 @@ const VMainPage = () => {
             </Box>
 
             <Center w={['95%', '85%', '80%']} borderRadius={'30px'} boxShadow={"0 0 8px 5px black"} pos={'relative'}>
-                <Image src={img2} borderRadius={'30px'} />
+                <Image src={img2} borderRadius={'30px'} w={'100%'}/>
                 <Box pos={'absolute'} left={0} top={0} w={'100%'} h={'100%'} borderRadius={'30px'} boxShadow={"inset 0 0 8px 5px black"}/>
             </Center>
 

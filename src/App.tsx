@@ -1,29 +1,32 @@
 import * as React from "react"
-import {Box, ChakraProvider, Image} from "@chakra-ui/react"
+import {background, Box, ChakraProvider, Image} from "@chakra-ui/react"
 import {Theme} from "./config/chakra/Theme";
 import VNavbar from "./modules/utils/Navbar/VNavbar";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import VMainPage from "./modules/MainPage/VMainPage";
+import wood from "./resources/wood.jpg";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>
-        <BrowserRouter>
-            <VNavbar/>
+        <div style={{backgroundImage: `url(${wood})`, backgroundRepeat: 'repeat', width: "100%", height: "100%", minHeight: "100vh"}}>
+            <BrowserRouter>
+                <VNavbar/>
 
-            <Switch>
-                <Route exact path='/'>
-                    <VMainPage/>
-                </Route>
+                <Switch>
+                    <Route exact path='/'>
+                        <VMainPage/>
+                    </Route>
 
-                <Route path='/reservations'>
+                    <Route path='/reservations'>
 
-                </Route>
+                    </Route>
 
-                <Route path='/gallery'>
+                    <Route path='/gallery'>
 
-                </Route>
-            </Switch>
+                    </Route>
+                </Switch>
 
-        </BrowserRouter>
+            </BrowserRouter>
+        </div>
     </ChakraProvider>
 )

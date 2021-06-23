@@ -3,6 +3,7 @@ import {Box, Button, Center, Flex, MenuButton, useBreakpointValue, useColorModeV
 import {ColorModeSwitcher} from "../../../ColorModeSwitcher";
 import VNavbarLink, {LinkProps} from "./VNavbarLink";
 import {HamburgerIcon} from "@chakra-ui/icons";
+import grass from '../../../resources/grass3.jpg'
 
 const VNavbar = () => {
     const bg = useColorModeValue("primary.400", "primary.700");
@@ -15,8 +16,12 @@ const VNavbar = () => {
 
     return (
         <Flex pos='relative' w='100%' alignContent='center'  justifyContent='center'
-              zIndex={'docked'} color={'white'} py={1} px={2} backdropBlur='6px' fontFamily='Lobster' flexWrap={'wrap'}
-              fontSize='2em' fontWeight={400} bg={bg}>
+              zIndex={'docked'} color={'white'} py={1} px={2}
+              backdropBlur='6px' fontFamily='Lobster' flexWrap={'wrap'}
+              fontSize='2em' fontWeight={400} boxShadow='0 0 15px 3px black'
+              // bg={bg}
+            bgImage={grass}
+        >
 
 
 
