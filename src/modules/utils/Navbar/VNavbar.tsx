@@ -1,22 +1,31 @@
 import React from 'react';
-import {Center, Link} from "@chakra-ui/react";
-import {Link as RouterLink} from "react-router-dom";
+import {Box, Center, Flex} from "@chakra-ui/react";
 import {ColorModeSwitcher} from "../../../ColorModeSwitcher";
+import VNavbarLink, {LinkProps} from "./VNavbarLink";
 
-interface LinkProps {
-    name: string,
-    path: string
-}
 
 const VNavbar = (props: { links: LinkProps[] }) => {
     return (
-        <Center w='100%'>
-            {props.links.map(l =>
-                <Link as={RouterLink} to={l.path}>{l.name}</Link>
-            )}
+        <Flex w='100%' alignContent='center'  justifyContent='center'
+        color={'white'} p={2} backdropBlur='6px'
+              fontSize='2em' fontWeight={400} bg={'rgba(0, 150, 50, 0.7)'}>
+            <Center fontFamily='Lobster' fontSize='1.3em'>
+                Majdan zachorodyński
+            </Center>
 
-            <ColorModeSwitcher alignSelf='flex-end'/>
-        </Center>
+            <Center flexGrow={2}>
+                {props.links.map(l =>
+                    <>
+                        <VNavbarLink name={l.name} path={l.path}/>
+                        <Box mx={3}>/</Box>
+                    </>
+                )}
+            </Center>
+
+            <Center>
+                <ColorModeSwitcher/>
+            </Center>
+        </Flex>
     );
 };
 
