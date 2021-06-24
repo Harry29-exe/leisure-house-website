@@ -19,8 +19,10 @@ const VNavbar = () => {
               zIndex={'docked'} color={'white'} py={1} px={2}
               backdropBlur='6px' fontFamily='Lobster' flexWrap={'wrap'}
               fontSize='2em' fontWeight={400} boxShadow='0 0 15px 3px black'
+
               // bg={bg}
-            bgImage={grass}
+            // bgImage={grass}
+              textShadow='2px 2px 4px black'
         >
 
 
