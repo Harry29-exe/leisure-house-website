@@ -8,6 +8,7 @@ import grass from '../../../resources/grass3.jpg'
 const VNavbar = () => {
     const bg = useColorModeValue("primary.400", "primary.700");
     const navbarType = useBreakpointValue({base: "none", sm: "small", md: "normal"});
+    let bgVal = useColorModeValue(40, 40);
 
     const links = [
             {name: 'Rezerwacje', path: '/reservations'},
@@ -18,9 +19,10 @@ const VNavbar = () => {
         <Flex pos='relative' w='100%' alignContent='center'  justifyContent='center'
               zIndex={'docked'} color={'white'} py={1} px={2}
               backdropBlur='6px' fontFamily='Lobster' flexWrap={'wrap'}
-              fontSize='2em' fontWeight={400} boxShadow='0 0 15px 3px black'
-              // bg={bg}
-            bgImage={grass}
+              fontSize='2em' fontWeight={400}
+              textShadow='2px 2px 4px black' pb={0} mb={0} boxShadow='0 0 15px 5px black'
+              bg={`rgba(${bgVal}, ${bgVal},${bgVal}, 0.8)`}
+            // bgImage={grass}
         >
 
 
@@ -59,7 +61,7 @@ const VNavbar = () => {
                 <ColorModeSwitcher/>
             </Center>
 
-            <Box w='100%' h={0} borderTop='2px solid' borderColor='white' mb={1}/>
+            <Box w='100%' h={0} borderTop='2px solid' borderColor='white'/>
         </Flex>
     );
 };
