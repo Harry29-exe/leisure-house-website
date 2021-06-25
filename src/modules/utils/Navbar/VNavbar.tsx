@@ -11,9 +11,13 @@ const VNavbar = () => {
     let bgVal = useColorModeValue(40, 40);
 
     const links = [
-            {name: 'Rezerwacje', path: '/reservations'},
-            {name: 'Galeria', path: '/galley'},
-            {name: 'Kontakt', path: '/contact'}];
+            {name: 'Atrakcje', path: '/atrakcje'},
+            {name: 'Aktualności', path: '/aktualności'},
+            {name: 'Rezerwacje', path: '/rezerwacje'},
+            {name: 'Galeria', path: '/galeria'},
+            {name: 'Kontakt & Dojazd', path: '/kontakt-dojazd'},
+
+    ];
 
     return (
         <Flex pos='relative' w='100%' alignContent='center'  justifyContent='center'
@@ -57,9 +61,9 @@ const VNavbar = () => {
                 </>
             }
 
-            <Center borderRadius={'lg'} overflow='none'>
-                <ColorModeSwitcher/>
-            </Center>
+            {/*<Center borderRadius={'lg'} overflow='none'>*/}
+            {/*    <ColorModeSwitcher/>*/}
+            {/*</Center>*/}
 
             <Box w='100%' h={0} borderTop='2px solid' borderColor='white'/>
         </Flex>

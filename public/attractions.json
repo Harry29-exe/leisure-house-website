@@ -1,0 +1,9 @@
+{
+  "attractions": [
+    {
+      "title": "wędkartswo",
+      "description": "opis",
+      "images": ["img1", "img2"]
+    }
+  ]
+}

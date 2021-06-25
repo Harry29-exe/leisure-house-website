@@ -1,12 +1,14 @@
 import React from 'react';
-import {Box, Center, Flex, HStack, Image, useColorModeValue, VStack} from "@chakra-ui/react";
+import {Box, Center, Flex, Grid, GridItem, HStack, Image, useColorModeValue, VStack} from "@chakra-ui/react";
 import main from "../../resources/main.jpg";
 import img1 from "../../resources/img1.jpg";
 import img2 from "../../resources/img2.jpg";
-import wood from "../../resources/wood.jpg";
-import wood2 from "../../resources/wood2.jpg";
-import Carousel from "../utils/carousel/Carousel";
+import Carousel from "../utils/Carousel";
 import TextSection from './TextSection';
+import ImageWithText from "../utils/ImageWithTextProps";
+import Card from "./Card";
+import { Link } from 'react-router-dom';
+import ImageWithBorder from "../utils/ImageWithBorder";
 
 
 const VMainPage = () => {
@@ -24,34 +26,34 @@ const VMainPage = () => {
             </Box>
 
             <TextSection title={"O nas"} >
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies posuere nibh, id ullamcorper orci gravida non. Vestibulum rhoncus imperdiet mauris, eu auctor est
-                pharetra dictum. Vivamus rutrum molestie felis sit amet ornare. Donec auctor felis ut elit dignissim varius. Morbi velit purus, lobortis imperdiet arcu quis, feugiat vestibulum massa.
-                Donec consectetur varius porttitor.
-                Curabitur elementum, massa at placerat sodales, diam risus cursus nisl, quis commodo tellus quam eu mi. Sed semper lacinia orci, ut tempor felis vulputate sit amet.
-                Duis id risus congue, lacinia eros eu, pharetra sem. Quisque varius id purus id eleifend. Aenean pretium euismod odio quis lobortis. Donec ut urna at felis sodales condimentum
+                Chcesz uciec od zgiełku, marzysz o ciszy i obcowaniu z naturą   - to urocze, spokojne siedlisko może być spełnieniem marzeń o domku nad jeziorem.
+                Ośrodek agroturystyczny ZAŚCIANEK położony jest w Majdanie Zahorodyńskim na Lubelszczyźnie (45 km od Lublina, 28 km od Chełma, 22 km od Łęcznej i 4,5 km od Siedliszcza)
+                na obrzeżach Poleskiego Parku Narodowego na pojezierzu łęczyńsko-włodawskim nieopodal Zalewu Zahorodyńskiego  - raju dla wędkarzy i osób pragnących spokojnie wypocząć nad wodą.
             </TextSection>
 
-            <Flex w={['95%', '85%', '80%']}  pos={'relative'} flexFlow={'wrap'} h={['400px', '500px', '600px']}>
-                <Box w={'100%'} h='100%' pos={'relative'} borderRadius={'30px'} boxShadow={"0 0 8px 5px white"}>
-                    <Carousel images={[img1, img2, main]} w={"100%"} h={"100%"} borderRadius={'30px'}/>
-                    <Box pointerEvents='none' pos={'absolute'} left={0} top={0} w={'100%'} h={'100%'} borderRadius={'30px'} boxShadow={"inset 0 0 8px 5px white"}/>
-                </Box>
-            </Flex>
+            <ImageWithBorder img={img2} w={["90%", "85%", "80%"]} maxH={"450px"} borderRadius={"2xl"}/>
 
             <TextSection title={"Dlaczego warto"}>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultricies posuere nibh, id ullamcorper orci gravida non. Vestibulum rhoncus imperdiet mauris, eu auctor est
-                pharetra dictum. Vivamus rutrum molestie felis sit amet ornare. Donec auctor felis ut elit dignissim varius. Morbi velit purus, lobortis imperdiet arcu quis, feugiat vestibulum massa.
-                Donec consectetur varius porttitor.\n" +
-                Curabitur elementum, massa at placerat sodales, diam risus cursus nisl, quis commodo tellus quam eu mi. Sed semper lacinia orci, ut tempor felis vulputate sit amet.
-                Duis id risus congue, lacinia eros eu, pharetra sem. Quisque varius id purus id eleifend. Aenean pretium euismod odio quis lobortis. Donec ut urna at felis sodales condimentum
-                a ac erat. Donec congue euismod dui, eget laoreet massa.
-                Quisque sed metus ante. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum at bibendum nisi. Cras sodales blandit tortor,
-                at tempus metus fermentum id. Aliquam dignissim nibh nec nibh fringilla, a ultricies sem faucibus. Integer placerat hendrerit eros, a suscipit metus porta sed.
+                Siedlisko to kompleks prawie stuletnich budynków wraz z udogodnieniami dla turystów, miejsce zjazdów rodzinnych, spotkań, ostoja spokoju dla Rodzin czy grup zorganizowanych.
+                Do dyspozycji gości jest również bezpłatny ogrodzony parking, ogromna altana z murowanym grillem i miejscem na ognisko i plac zabaw.
             </TextSection>
 
-            <Box>
+            <Center h="200px" w='90%' mx='10%' fontSize={'2rem'} flexFlow='wrap'>
+                <Link to={"/reservations"}>
+                    <Card img={img1} title={"Atrakcje"} text={"Sprawdz co cię u nas czeka"} w={"350px"} h="400px" m={[3, 4, 5]}/>
+                </Link>
+                <Link to={"/reservations"}>
+                    <Card img={img1} title={"Rezerwacje"} text={"Sprawdz wolne terminy"} w={"350px"} h="400px" m={[3, 4, 5]}/>
+                </Link>
+                <Link to={"/reservations"}>
+                    <Card img={img1} title={"Galeria"} text={"Zobacz "} w={"350px"} h="400px" m={[3, 4, 5]}/>
+                </Link>
+                <Link to={"/reservations"}>
+                    <Card img={img1} title={"Kontakt"} text={"description"} w={"350px"} h="400px" m={[3, 4, 5]}/>
+                </Link>
+            </Center>
 
-            </Box>
+
 
             <Box w={1} h={'2000px'}/>
 
