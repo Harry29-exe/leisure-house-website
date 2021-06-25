@@ -5,6 +5,7 @@ import VNavbar from "./modules/utils/Navbar/VNavbar";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
 import VMainPage from "./modules/MainPage/VMainPage";
 import wood from "./resources/wood.jpg";
+import Reservations from "./modules/Reservations";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>
@@ -18,7 +19,7 @@ export const App = () => (
                     </Route>
 
                     <Route path='/reservations'>
-
+                        <Reservations/>
                     </Route>
 
                     <Route path='/gallery'>

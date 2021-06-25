@@ -7,7 +7,7 @@ import grass from '../../../resources/grass3.jpg'
 
 const VNavbar = () => {
     const bg = useColorModeValue("primary.400", "primary.700");
-    const navbarType = useBreakpointValue({base: "none", sm: "small", md: "normal"});
+    const navbarType = useBreakpointValue({base: "none", md: "small", lg: "normal"});
     let bgVal = useColorModeValue(40, 40);
 
     const links = [
@@ -21,7 +21,7 @@ const VNavbar = () => {
               backdropBlur='6px' fontFamily='Lobster' flexWrap={'wrap'}
               fontSize='2em' fontWeight={400}
               textShadow='2px 2px 4px black' pb={0} mb={0} boxShadow='0 0 15px 5px black'
-              bg={`rgba(${bgVal}, ${bgVal},${bgVal}, 0.8)`}
+              bg={`#2A653Cbb`}
             // bgImage={grass}
         >
 
