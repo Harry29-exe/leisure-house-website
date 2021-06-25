@@ -6,7 +6,7 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import VMainPage from "./modules/MainPage/VMainPage";
 import wood from "./resources/wood.jpg";
 import Reservations from "./modules/Reservations";
-import Attractions from "./modules/Attractions";
+import Attractions from "./modules/attractions/Attractions";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>

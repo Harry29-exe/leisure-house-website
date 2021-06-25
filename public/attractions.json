@@ -1,9 +1,7 @@
-{
-  "attractions": [
-    {
-      "title": "wędkartswo",
-      "description": "opis",
-      "images": ["img1", "img2"]
-    }
-  ]
-}
+[
+  {
+    "name": "wędkartswo",
+    "description": "opis",
+    "images": ["img1", "img2"]
+  }
+]
