@@ -4,10 +4,10 @@ import {Box} from "@chakra-ui/react";
 const TextSection = (props: PropsWithChildren<{title:string}>) => {
     return (
         <Box w={'100%'} fontSize={['1rem', '1.2rem', '1.5rem']}  p={6} borderY={'2px solid white'} pos='relative' zIndex={1} color='white'>
-            <Box fontWeight={400} fontSize={'1.5em'} fontFamily='Lobster'>{props.title}</Box>
-            <p style={{display: 'inline-block'}}>
+            <Box fontWeight={400} fontSize={'1.5em'} fontFamily='Lobster' ml={['1%','2.5%','4%','6%',]}>{props.title}</Box>
+            <Box style={{display: 'inline-block'}} ml={['1%','2.5%','4%','6%',]} w={['98%', '95%', '92%', '88%']}>
                 {props.children}
-            </p>
+            </Box>
             <Box pos='absolute' left={0} top={0} w={'100%'} h={'100%'} bg={`#2A653C`} opacity={0.8} zIndex={-1}/>
         </Box>
     );

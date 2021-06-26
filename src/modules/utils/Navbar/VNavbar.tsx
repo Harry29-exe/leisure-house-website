@@ -7,7 +7,7 @@ import grass from '../../../resources/grass3.jpg'
 
 const VNavbar = () => {
     const bg = useColorModeValue("primary.400", "primary.700");
-    const navbarType = useBreakpointValue({base: "none", md: "small", lg: "normal"});
+    const navbarType = useBreakpointValue({base: "none", sm: "small", lg: "normal"});
     let bgVal = useColorModeValue(40, 40);
 
     const links = [
@@ -33,12 +33,12 @@ const VNavbar = () => {
 
             {navbarType === "normal" ?
                 <>
-                    <VNavbarLink name="Majdan zachorodyński" path="/"/>
+                    <VNavbarLink name="Zaścianek zahorodyński" path="/"/>
                     <Flex flexGrow={2} justifyContent='flex-start' alignContent='center'>
                         {links.map(l =>
                             <>
-                                <Box mx={5}/>
-                                <VNavbarLink name={l.name} path={l.path}/>
+                                <Box key={l.name} mx={5}/>
+                                <VNavbarLink key={l.path} name={l.name} path={l.path}/>
                             </>
                         )}
                     </Flex>
