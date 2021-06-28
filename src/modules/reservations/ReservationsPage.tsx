@@ -6,9 +6,8 @@ import TextSection from "../utils/TextSection";
 
 const ReservationsPage = () => {
     return (
-        <VStack>
+        <VStack spacing={8}>
             <PageTitle title={"Kalendarz rezerawacji"}/>
-            <ReservationsCalendar/>
 
             <TextSection title={"Rezerwacje"}>
                 Ośrodek dysponuje domkami do 12 miejsc, z salonem, sypialnią, samodzielną w pełni wyposażoną kuchnią, łazienką i dostępem do wi-fi
@@ -18,10 +17,9 @@ const ReservationsPage = () => {
                 Dzieci do 3 lat gratis, od 3 do 7 lat połowa ceny.
 
             </TextSection>
-            <Box/>
-            <Box/>
-            <Box/>
-            <Box/>
+
+            <ReservationsCalendar/>
+
             <TextSection title={"Płatność"}>
                 Płatność:<br/>
                 <br/>

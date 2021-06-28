@@ -7,9 +7,11 @@ import {websiteAddress} from "../../config/Address";
 
 const Attraction = (props: {attraction: AttractionModel}) => {
     return (
-        <VStack spacing={10}>
+        <VStack spacing={10} w='100%'>
             <TextSection title={props.attraction.name}>
-                {props.attraction.description}
+                {props.attraction.description.split("\n").map(
+                    t => <>{t}<br/></>
+                )}
             </TextSection>
             {props.attraction.images.map(img =>
                 <AppImage key={img} img={websiteAddress + '/' + img}

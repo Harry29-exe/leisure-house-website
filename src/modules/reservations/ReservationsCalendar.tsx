@@ -50,7 +50,7 @@ const ReservationsCalendar = () => {
     }
 
     return (
-        <Box>
+        <Box w={['100%', '300px', '400px', '800px', '1000px']}>
             {reservations ?
                 <Calendar tileDisabled={isDisabled}/>
                 :
