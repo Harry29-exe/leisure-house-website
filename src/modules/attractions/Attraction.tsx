@@ -1,6 +1,6 @@
 import React from 'react';
 import {AttractionModel} from "./AttractionsPresenter";
-import TextSection from "../MainPage/TextSection";
+import TextSection from "../utils/TextSection";
 import {VStack} from "@chakra-ui/react";
 import AppImage from "../utils/AppImage/AppImage";
 import {websiteAddress} from "../../config/Address";

@@ -7,10 +7,6 @@ export interface AttractionModel {
 }
 
 export const fetchAttractions = async (): Promise<AttractionModel[]> => {
-    let data = await fetch(websiteAddress + "/config.atrakcje.json")
+    return await fetch(websiteAddress + "/config/atrakcje.json")
         .then(response => response.json());
-
-    console.log(data);
-
-    return data;
 }

@@ -2,6 +2,7 @@ import {extendTheme} from "@chakra-ui/react";
 import {colors} from "./Colors";
 import {mode} from "@chakra-ui/theme-tools"
 import {breakpoints} from "./Breakpoints";
+import {Modal} from "./components/Modal";
 
 export const Theme = extendTheme({
     styles: {
@@ -19,4 +20,5 @@ export const Theme = extendTheme({
     components: {
 
     }
+
 })

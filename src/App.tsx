@@ -3,11 +3,11 @@ import {background, Box, ChakraProvider, Image} from "@chakra-ui/react"
 import {Theme} from "./config/chakra/Theme";
 import VNavbar from "./modules/utils/Navbar/VNavbar";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import VMainPage from "./modules/MainPage/VMainPage";
+import MainPage from "./modules/MainPage/MainPage";
 import wood from "./resources/wood.jpg";
-import Reservations from "./modules/Reservations";
 import Attractions from "./modules/attractions/Attractions";
 import NewsPage from "./modules/news/NewsPage";
+import ReservationsPage from "./modules/reservations/ReservationsPage";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>
@@ -17,7 +17,7 @@ export const App = () => (
 
                 <Switch>
                     <Route exact path='/'>
-                        <VMainPage/>
+                        <MainPage/>
                     </Route>
 
                     <Route exact path='/atrakcje'>
@@ -29,7 +29,7 @@ export const App = () => (
                     </Route>
 
                     <Route exact path='/rezerwacje'>
-                        <Reservations/>
+                        <ReservationsPage/>
                     </Route>
 
                     <Route exact path='/galeria'>

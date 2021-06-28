@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Attraction from './Attraction';
 import {AttractionModel, fetchAttractions} from "./AttractionsPresenter";
 import {Box, Flex, VStack} from "@chakra-ui/react";
+import PageTitle from "../utils/PageTitle";
 
 const Attractions = () => {
     const [state, setState] = useState<AttractionModel[]>();
@@ -16,10 +17,7 @@ const Attractions = () => {
     return (
         <Box w="100%" h="100%">
 
-            <Flex justifyContent='center' justifyItems='center' flexFlow='column' w='100%' h='100%' color='white' textAlign='center'
-                  fontFamily='Lobster' fontSize={['35px', '50px', '75px', '100px']} textShadow='3px 3px 5px black'>
-                <Box w='100%'>Atrakcje</Box>
-            </Flex>
+            <PageTitle title={"Atrakcje"}/>
 
             <Box/>
 

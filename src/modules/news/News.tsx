@@ -8,7 +8,7 @@ const News = (props: {news: NewsModel}) => {
 
     return (
         <>
-            <Box onClick={onOpen} w={['95%', '90%', '80%', '75%']} pos='relative' zIndex={1} overflow={'hidden'} borderRadius={'2xl'}>
+            <Box onClick={onOpen} w={['95%', '90%', '80%', '75%']} pos='relative' zIndex={1} overflow={'hidden'} borderRadius={'2xl'} _hover={{cursor: 'pointer'}}>
                 <HStack spacing={2} px={8} py={4}>
                     <VStack w={'40%'}>
                         <Center fontFamily='lobster' fontSize={'2em'}>

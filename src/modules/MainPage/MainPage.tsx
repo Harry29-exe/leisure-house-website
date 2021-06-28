@@ -2,14 +2,14 @@ import React from 'react';
 import {Box, Center, Flex, Grid, GridItem, HStack, Image, useColorModeValue, VStack} from "@chakra-ui/react";
 import img1 from "../../resources/img1.jpg";
 import img2 from "../../resources/img2.jpg";
-import TextSection from './TextSection';
+import TextSection from '../utils/TextSection';
 import Card from "./Card";
 import { Link } from 'react-router-dom';
 import AppImage from "../utils/AppImage/AppImage";
 import {websiteAddress} from "../../config/Address";
 
 
-const VMainPage = () => {
+const MainPage = () => {
     const bg = useColorModeValue("primary.20", "primary.900");
 
     return (
@@ -68,4 +68,4 @@ const VMainPage = () => {
     );
 };
 
-export default VMainPage;
+export default MainPage;
