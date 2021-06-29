@@ -1,11 +1,15 @@
-import React from 'react';
-import {Box, Center} from "@chakra-ui/react";
+import React, {PropsWithChildren} from 'react';
+import {Box} from "@chakra-ui/react";
 
-const TextSection = (props: {test:string}) => {
+const TextSection = (props: PropsWithChildren<{title:string}>) => {
     return (
-        <Center borderRadius={'2xl'} bg={'primary.100'} border={'2px solid'} borderColor={'gray.400'} p={4}>
-            {props.test}
-        </Center>
+        <Box w={'100%'} fontSize={['1rem', '1.2rem', '1.5rem']}  p={6} borderY={'2px solid white'} pos='relative' zIndex={1} color='white'>
+            <Box fontWeight={400} fontSize={'1.5em'} fontFamily='Lobster' ml={['1%','4%','6%','10%',]}>{props.title}</Box>
+            <Box style={{display: 'inline-block'}} ml={['1%','4%','6%','10%',]} w={['98%', '92%', '88%', '80%']}>
+                {props.children}
+            </Box>
+            <Box pos='absolute' left={0} top={0} w={'100%'} h={'100%'} bg={`#2A653C`} opacity={0.8} zIndex={-1}/>
+        </Box>
     );
 };
 

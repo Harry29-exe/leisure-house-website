@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Wędkartswo",
+    "description": "Zalew Zahorodyński to  48 ha łowisko dla amatorów i zapaleńców wędkarstwa, a głębokość zbiornika sięga kilku metrów. Nad zalewem można łowić ryby (szczegóły u gospodarzy). Zbiornik dostępny jest z brzegu i łodzi.",
+
+    "images": ["/images/ZALEW łódka.jpg"]
+  },
+
+  {
+    "name": "Kąpiele wodne",
+    "description": "Nad zalewem istnieje molo oraz spokojna plaża, dla osób lubiących wypoczywać nad wodą.",
+    "images": ["/images/ZALEW molo.jpg"]
+  },
+
+  {
+    "name": "Wycieczki rowerowe",
+    "description": "Mamy wspaniałe tereny do zwiedzania na dwóch kołach. Klimat bajecznych łąk,bagien, pagórków i lasów najlepiej poczuć eksplorując je na rowerach.\n\nNa miejscu możliwość wypożyczenia rowerów.\n",
+    "images": ["/images/ŚCIEŻKA.jpg"]
+  },
+  {
+    "name": "Zwiedzanie",
+    "description": "Dla miłośników zwiedzania zarówno tych małych jak i dużych okolica oferuje:\n \n1.\tścieżkę dydaktyczną Czahary – dom żurawi, żółwia błotnego oraz wielu rzadkich gatunków ptaków i zwierząt\n2.\tPodziemia Kredowe w Chełmie (przygoda z Duchem Bieluchem:)\n3.\twieża w Stołpiu z XII wieku.\n4.\truiny XVI wiecznego Zamku w Krupem\n5.\tliczne jeziora pojezierza łęczyńsko-włodawskiego\n6.\tpark linowy w Cichankach k. Łęcznej\n7.\tcentrum edukacji i rozrywki dzieci młodzieży \"Jankes Kids” w Fajsławicach\n",
+    "images": []
+  }
+]

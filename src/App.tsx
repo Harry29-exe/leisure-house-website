@@ -3,8 +3,13 @@ import {background, Box, ChakraProvider, Image} from "@chakra-ui/react"
 import {Theme} from "./config/chakra/Theme";
 import VNavbar from "./modules/utils/Navbar/VNavbar";
 import {BrowserRouter, Route, Switch} from "react-router-dom";
-import VMainPage from "./modules/MainPage/VMainPage";
+import MainPage from "./modules/MainPage/MainPage";
 import wood from "./resources/wood.jpg";
+import Attractions from "./modules/attractions/Attractions";
+import NewsPage from "./modules/news/NewsPage";
+import ReservationsPage from "./modules/reservations/ReservationsPage";
+import ContactPage from "./modules/Contact/ContactPage";
+import GalleryPage from "./modules/gallery/GalleryPage";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>
@@ -14,15 +19,27 @@ export const App = () => (
 
                 <Switch>
                     <Route exact path='/'>
-                        <VMainPage/>
+                        <MainPage/>
                     </Route>
 
-                    <Route path='/reservations'>
-
+                    <Route exact path='/atrakcje'>
+                        <Attractions/>
                     </Route>
 
-                    <Route path='/gallery'>
+                    <Route exact path='/aktualności'>
+                        <NewsPage/>
+                    </Route>
 
+                    <Route exact path='/rezerwacje'>
+                        <ReservationsPage/>
+                    </Route>
+
+                    <Route exact path='/galeria'>
+                        <GalleryPage/>
+                    </Route>
+
+                    <Route exact path='/kontakt-dojazd'>
+                        <ContactPage/>
                     </Route>
                 </Switch>
 
