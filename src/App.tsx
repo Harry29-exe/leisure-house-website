@@ -9,6 +9,7 @@ import Attractions from "./modules/attractions/Attractions";
 import NewsPage from "./modules/news/NewsPage";
 import ReservationsPage from "./modules/reservations/ReservationsPage";
 import ContactPage from "./modules/Contact/ContactPage";
+import GalleryPage from "./modules/gallery/GalleryPage";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>
@@ -34,7 +35,7 @@ export const App = () => (
                     </Route>
 
                     <Route exact path='/galeria'>
-
+                        <GalleryPage/>
                     </Route>
 
                     <Route exact path='/kontakt-dojazd'>
