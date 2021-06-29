@@ -10,7 +10,7 @@ const ContactPage = () => {
             <Box w={['100%', '90%', '80%']} p={[2,5,6]} pos={'relative'} zIndex={1} overflow='hidden' borderRadius={'2xl'}>
                 <Box overflow='hidden' borderRadius={'2xl'}>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d19963.208407614584!2d22.65823545!3d51.2853433!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spl!2spl!4v1624640287836!5m2!1spl!2spl"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7487.162838779253!2d23.13594388784364!3d51.22753302471058!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4723a59b86755977%3A0x12e037cf5880dab8!2sMajdan%20Zahorody%C5%84ski!5e0!3m2!1spl!2spl!4v1624965380176!5m2!1spl!2spl"
                         width="100%" height="450" loading="lazy"></iframe>
                 </Box>
 
