@@ -44,10 +44,7 @@ const VNavbar = () => {
                     <VNavbarLink name="Zaścianek zahorodyński" path="/"/>
                     <Flex flexGrow={2} justifyContent='flex-start' alignContent='center'>
                         {links.map(l =>
-                            <>
-                                <Box key={l.name} mx={5}/>
-                                <VNavbarLink key={l.path} name={l.name} path={l.path}/>
-                            </>
+                            <VNavbarLink key={l.path} name={l.name} path={l.path} mx={5}/>
                         )}
                     </Flex>
                 </>

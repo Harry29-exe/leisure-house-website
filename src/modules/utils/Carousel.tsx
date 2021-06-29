@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {Box, Center, ChakraProps, HStack, Image} from "@chakra-ui/react";
 import {ArrowLeftIcon, ArrowRightIcon} from "@chakra-ui/icons";
+import AppImage from "./AppImage/AppImage";
 
 type CarouselProps = ChakraProps & {images: string[]}
 
@@ -41,14 +42,15 @@ const Carousel = (props: CarouselProps) => {
     const imageWidth = 100 / (images.length+1);
 
     return (
-        <Box {...style} pos='relative' overflow='hidden' >
+        <Box {...style} pos='relative' overflow='hidden' boxShadow={["0 0 5px 3px white", null, "0 0 8px 5px white"]} zIndex={1}>
             <HStack h='100%' w={`${(images.length+1) * 100}%`} spacing={0}
-                    transform={`translate(${-state.shift*imageWidth}%, 0)`}
+                    transform={`translate(${-state.shift*imageWidth}%, 0)`} pos='relative' top={0} left={0}
                     transition={`transform ${noTransition()? 0: transitionTime}s`} >
                 {images.map(
-                    img => <Image key={img} src={img} objectFit='cover' h='100%' w={`${imageWidth}%`} userSelect='none'/>
+                    img => <AppImage key={img} img={img} objectFit='cover' h='100%' w={`${imageWidth}%`} userSelect='none'/>
                 )}
                 <Image src={images[0]} objectFit='cover' h='100%' w={`${imageWidth}%`} userSelect='none'/>
+
             </HStack>
 
             <Center onClick={() => previousImage()} _hover={{cursor: 'pointer', bg: "whiteAlpha.400", opacity: 1}}
@@ -59,6 +61,8 @@ const Carousel = (props: CarouselProps) => {
                     opacity={0} pos='absolute' top='0' h='100%' left={['80%', '85%', '90%']} w={['20%', '15%', '10%']} m={0} p={0} transition='opacity 0.5s'>
                 <ArrowRightIcon fontSize='25px'/>
             </Center>
+
+
         </Box>
     );
 };

@@ -11,13 +11,15 @@ const opinions: UserOpinionProps[] = [
 ]
 
 const UsersOpinions = () => {
+    let key = 0;
+
     return (
         <Box w={'100%'}>
             <PageTitle title={"Opinie naszych gości"}/>
 
             <VStack w='100%' spacing={10}>
                 {opinions.map(
-                    o => <UserOpinion userName={o.userName} opinion={o.opinion}/>
+                    o => <UserOpinion key={key++} userName={o.userName} opinion={o.opinion}/>
                 )}
             </VStack>
         </Box>

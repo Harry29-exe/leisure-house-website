@@ -25,7 +25,7 @@ const GalleryPage = () => {
                 <Flex justifyContent='center' flexWrap='wrap' w='90%' spacing={20}>
                     {
                         imageList.map(
-                            img => <GalleryImage maxH={'300px'} img={websiteAddress + "/images/" + img}/>
+                            img => <GalleryImage key={img} maxH={'300px'} img={websiteAddress + "/images/" + img}/>
                         )
                     }
                 </Flex>

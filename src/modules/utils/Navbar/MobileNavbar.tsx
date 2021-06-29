@@ -18,7 +18,7 @@ const MobileNavbar = (props: {isOpen: boolean, onClose: () => void}) => {
 
                     <VStack spacing={'50px'}>
                     {links.map(l =>
-                        <Box onClick={props.onClose}>
+                        <Box key={l.name} onClick={props.onClose}>
                             <VNavbarLink key={l.path} name={l.name} path={l.path}/>
                         </Box>
                     )}
