@@ -1,8 +1,9 @@
 import React, {useState} from 'react';
-import {Box, Spinner, VStack} from "@chakra-ui/react";
+import {Box, Flex, Spinner, VStack} from "@chakra-ui/react";
 import {websiteAddress} from "../../config/Address";
 import AppImage from "../utils/AppImage/AppImage";
 import PageTitle from "../utils/PageTitle";
+import GalleryImage from "../utils/GalleryImage/GalleryImage";
 
 const fetchImageList = async (): Promise<string[]> => {
     let data = await fetch(websiteAddress + "/config/zdjecia.json").then(response => response.json());
@@ -21,13 +22,13 @@ const GalleryPage = () => {
             <PageTitle title={"Galeria"}/>
 
             {imageList?
-                <VStack w='90%' spacing={20}>
+                <Flex justifyContent='center' flexWrap='wrap' w='90%' spacing={20}>
                     {
                         imageList.map(
-                            img => <AppImage w={['100%', '90%', '70%', '60%']} maxH={'400px'} img={websiteAddress + "/images/" + img}/>
+                            img => <GalleryImage maxH={'300px'} img={websiteAddress + "/images/" + img}/>
                         )
                     }
-                </VStack>
+                </Flex>
                 :
                 <Spinner size={'xl'}/>
             }

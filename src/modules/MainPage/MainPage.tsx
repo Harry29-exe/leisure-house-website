@@ -7,6 +7,7 @@ import Card from "./Card";
 import { Link } from 'react-router-dom';
 import AppImage from "../utils/AppImage/AppImage";
 import {websiteAddress} from "../../config/Address";
+import UsersOpinions from "./UsersOpinions";
 
 
 const MainPage = () => {
@@ -60,9 +61,9 @@ const MainPage = () => {
             {/*    </Link>*/}
             {/*</Center>*/}
 
+            <UsersOpinions/>
 
-
-            <Box w={1} h={'2000px'}/>
+            <Box w={1} h={20}/>
 
         </VStack>
     );
