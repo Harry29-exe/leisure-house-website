@@ -1,23 +1,32 @@
 import React from 'react';
-import {Box, Button, Center, Flex, MenuButton, useBreakpointValue, useColorModeValue} from "@chakra-ui/react";
+import {
+    Box,
+    Button,
+    Center,
+    Flex,
+    MenuButton,
+    useBreakpointValue,
+    useColorModeValue,
+    useDisclosure
+} from "@chakra-ui/react";
 import {ColorModeSwitcher} from "../../../ColorModeSwitcher";
 import VNavbarLink, {LinkProps} from "./VNavbarLink";
 import {HamburgerIcon} from "@chakra-ui/icons";
 import grass from '../../../resources/grass3.jpg'
+import MobileNavbar from "./MobileNavbar";
+
+export const links = [
+    {name: 'Atrakcje', path: '/atrakcje'},
+    {name: 'Aktualności', path: '/aktualności'},
+    {name: 'Rezerwacje', path: '/rezerwacje'},
+    {name: 'Galeria', path: '/galeria'},
+    {name: 'Kontakt & Dojazd', path: '/kontakt-dojazd'},
+
+];
 
 const VNavbar = () => {
-    const bg = useColorModeValue("primary.400", "primary.700");
     const navbarType = useBreakpointValue({base: "none", sm: "small", lg: "normal"});
-    let bgVal = useColorModeValue(40, 40);
-
-    const links = [
-            {name: 'Atrakcje', path: '/atrakcje'},
-            {name: 'Aktualności', path: '/aktualności'},
-            {name: 'Rezerwacje', path: '/rezerwacje'},
-            {name: 'Galeria', path: '/galeria'},
-            {name: 'Kontakt & Dojazd', path: '/kontakt-dojazd'},
-
-    ];
+    const {isOpen, onOpen, onClose} = useDisclosure();
 
     return (
         <Flex pos='relative' w='100%' alignContent='center'  justifyContent='center'
@@ -26,7 +35,6 @@ const VNavbar = () => {
               fontSize='2em' fontWeight={400}
               textShadow='2px 2px 4px black' pb={0} mb={0} boxShadow='0 0 15px 5px black'
               bg={`#2A653Cbb`}
-            // bgImage={grass}
         >
 
 
@@ -49,23 +57,25 @@ const VNavbar = () => {
                     <VNavbarLink name="Majdan zachorodyński" path="/"/>
                     <Box flexGrow={2} />
                     <Center>
-                        <Button variant={"ghost"} leftIcon={<HamburgerIcon/>}/>
+                        <Button onClick={onOpen} variant={"ghost"} leftIcon={<HamburgerIcon/>}/>
                     </Center>
+
+                    <MobileNavbar isOpen={isOpen} onClose={onClose}/>
                 </>
                     :
                 <>
                     <Center>
-                        <Button variant={"ghost"} leftIcon={<HamburgerIcon fontSize="2em"/>}/>
+                        <Button onClick={onOpen} variant={"ghost"} leftIcon={<HamburgerIcon fontSize="2em"/>}/>
                     </Center>
                     <Box flexGrow={2} />
+
+                    <MobileNavbar isOpen={isOpen} onClose={onClose}/>
+
                 </>
             }
 
-            {/*<Center borderRadius={'lg'} overflow='none'>*/}
-            {/*    <ColorModeSwitcher/>*/}
-            {/*</Center>*/}
-
             <Box w='100%' h={0} borderTop='2px solid' borderColor='white'/>
+
         </Flex>
     );
 };
