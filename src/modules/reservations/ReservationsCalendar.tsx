@@ -18,7 +18,10 @@ const fetchDates = async (): Promise<Reservations[]> => {
     let fetchedReservations: FetchedReservation[] = await fetch(websiteAddress + '/config/rezerwacje.json').then(response => response.json());
     let reservations: Reservations[] = [];
     fetchedReservations.forEach(
-        fr => reservations.push({from: new Date(fr.from[0], fr.from[1] - 1, fr.from[2]), to: new Date(fr.to[0], fr.to[1] - 1, fr.to[2])})
+        fr => reservations.push({
+            from: new Date(fr.from[0], fr.from[1] - 1, fr.from[2]),
+            to: new Date(fr.to[0], fr.to[1] - 1, fr.to[2])
+        })
     )
 
     console.log(reservations);
@@ -34,15 +37,15 @@ const ReservationsCalendar = () => {
     }
 
     const isDisabled = (props: { activeStartDate: any, date: any, view: any }): boolean => {
-        if(!reservations) {
+        if (!reservations) {
             return false;
         }
 
         let currentDate = props.date.getTime();
 
-        for(let i = 0; i < reservations.length; i++) {
+        for (let i = 0; i < reservations.length; i++) {
             let reservation = reservations[i];
-            if(reservation.from.getTime() - currentDate <= 0 && reservation.to.getTime() - currentDate >= 0) {
+            if (reservation.from.getTime() - currentDate <= 0 && reservation.to.getTime() - currentDate >= 0) {
                 return true;
             }
         }

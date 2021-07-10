@@ -1,6 +1,5 @@
 import React from 'react';
-import {Box, VStack} from "@chakra-ui/react";
-import TextSection from "../utils/TextSection";
+import {Box} from "@chakra-ui/react";
 
 export type UserOpinionProps = {
     userName: string,
@@ -9,7 +8,7 @@ export type UserOpinionProps = {
 
 const UserOpinion = (props: UserOpinionProps) => {
     return (
-        <Box w={['95%', '90%', '85%', '80%']} fontSize={['1rem', '1.2rem', '1.5rem']}  p={5} pt={4}
+        <Box w={['95%', '90%', '85%', '80%']} fontSize={['1rem', '1.2rem', '1.5rem']} p={5} pt={4}
              border={'2px solid white'} borderRadius={'2xl'} overflow='hidden'
              pos='relative' zIndex={1} color='white'>
 

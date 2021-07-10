@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {Box, Flex, VStack} from "@chakra-ui/react";
-import Attraction from "../attractions/Attraction";
-import {AttractionModel, fetchAttractions} from "../attractions/AttractionsPresenter";
+import {Box, VStack} from "@chakra-ui/react";
 import News from './News';
 import {fetchNews, NewsModel} from "./NewsPresenter";
 import PageTitle from "../utils/PageTitle";
@@ -9,7 +7,7 @@ import PageTitle from "../utils/PageTitle";
 const NewsPage = () => {
     const [state, setState] = useState<NewsModel[]>();
 
-    if(!state) {
+    if (!state) {
         fetchNews()
             .then(
                 value => setState(value),

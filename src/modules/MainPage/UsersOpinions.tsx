@@ -1,12 +1,18 @@
 import React from 'react';
-import {Box, Flex, VStack} from "@chakra-ui/react";
+import {Box, VStack} from "@chakra-ui/react";
 import PageTitle from "../utils/PageTitle";
 import UserOpinion, {UserOpinionProps} from "./UserOpinion";
 
 const opinions: UserOpinionProps[] = [
-    {userName: "ala", opinion: "gnbfdhoisjghgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdbfngdsfdafdhdgfd"},
+    {
+        userName: "ala",
+        opinion: "gnbfdhoisjghgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdbfngdsfdafdhdgfd"
+    },
     {userName: "ala", opinion: "gnbfdhoisjghbfngdsfdafdhdggnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdfd"},
-    {userName: "ala", opinion: "gnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgfd"},
+    {
+        userName: "ala",
+        opinion: "gnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgnbfdhoisjghbfngdsfdafdhdgfd"
+    },
 
 ]
 

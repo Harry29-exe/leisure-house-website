@@ -1,13 +1,13 @@
 import React, {useState} from 'react';
 import Attraction from './Attraction';
 import {AttractionModel, fetchAttractions} from "./AttractionsPresenter";
-import {Box, Flex, VStack} from "@chakra-ui/react";
+import {Box, VStack} from "@chakra-ui/react";
 import PageTitle from "../utils/PageTitle";
 
 const Attractions = () => {
     const [state, setState] = useState<AttractionModel[]>();
 
-    if(!state) {
+    if (!state) {
         fetchAttractions()
             .then(
                 value => setState(value),
@@ -23,7 +23,7 @@ const Attractions = () => {
 
             <VStack w='100%' h='100%' spacing={20}>
                 {state &&
-                    state.map(
+                state.map(
                     a => <Attraction key={a.name} attraction={a}/>
                 )}
             </VStack>

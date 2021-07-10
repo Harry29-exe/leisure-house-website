@@ -1,7 +1,5 @@
-
 export const Container = (props: any) => ({
-    baseStyle: {
-    },
+    baseStyle: {},
 
 
 })

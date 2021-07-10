@@ -9,8 +9,8 @@ export const colors = {
     // }
 
     primary: {
-        '20' : '#F1F9F3',
-        '50' : '#E2F3E7',
+        '20': '#F1F9F3',
+        '50': '#E2F3E7',
         '100': '#C5E7D0',
         '200': '#A9DBB9',
         '300': '#7EC995',
@@ -22,8 +22,8 @@ export const colors = {
         '900': '#0C1D10',
     },
     secondary: {
-        '20' : '#EBFAFE',
-        '50' : '#C5F0FC',
+        '20': '#EBFAFE',
+        '50': '#C5F0FC',
         '100': '#B1EBFB',
         '200': '#9EE6FA',
         '300': '#8BE1F9',
