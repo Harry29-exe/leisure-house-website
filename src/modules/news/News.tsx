@@ -21,7 +21,7 @@ const News = (props: { news: NewsModel }) => {
                     </VStack>
 
                     <Center w='60%'>
-                        <Image w='100%' h={['300px', null, '400px']} src={props.news.image} objectFit={'cover'}
+                        <Image w='100%' h={['300px', null, '400px']} src={'images' + props.news.image} objectFit={'cover'}
                                borderRadius={'2xl'} my={6}/>
                     </Center>
 

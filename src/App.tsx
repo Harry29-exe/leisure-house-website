@@ -2,7 +2,7 @@ import * as React from "react"
 import {ChakraProvider} from "@chakra-ui/react"
 import {Theme} from "./config/chakra/Theme";
 import VNavbar from "./modules/utils/Navbar/VNavbar";
-import {HashRouter, Route, Switch} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Switch} from "react-router-dom";
 import MainPage from "./modules/MainPage/MainPage";
 import wood from "./resources/wood.jpg";
 import Attractions from "./modules/attractions/Attractions";
@@ -20,7 +20,7 @@ export const App = () => (
             height: "100%",
             minHeight: "100vh"
         }}>
-            <HashRouter>
+            <BrowserRouter>
                 <VNavbar/>
 
                 <Switch>
@@ -49,7 +49,7 @@ export const App = () => (
                     </Route>
                 </Switch>
 
-            </HashRouter>
+            </BrowserRouter>
         </div>
     </ChakraProvider>
 )

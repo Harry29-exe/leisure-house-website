@@ -8,6 +8,6 @@ export interface NewsModel {
 }
 
 export const fetchNews = async (): Promise<NewsModel[]> => {
-    return await fetch(websiteAddress + "/config/aktualnosci.json")
+    return await fetch("/config/aktualnosci.json")
         .then(response => response.json());
 }

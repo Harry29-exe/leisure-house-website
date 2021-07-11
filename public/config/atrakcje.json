@@ -3,19 +3,19 @@
     "name": "Wędkartswo",
     "description": "Zalew Zahorodyński to  48 ha łowisko dla amatorów i zapaleńców wędkarstwa, a głębokość zbiornika sięga kilku metrów. Nad zalewem można łowić ryby (szczegóły u gospodarzy). Zbiornik dostępny jest z brzegu i łodzi.",
 
-    "images": ["/images/ZALEW molo.jpg", "/images/mami.jpg", "/images/ZALEW łódka.jpg"]
+    "images": ["ZALEW molo.jpg", "mami.jpg", "ZALEW łódka.jpg"]
   },
 
   {
     "name": "Kąpiele wodne",
     "description": "Nad zalewem istnieje molo oraz spokojna plaża, dla osób lubiących wypoczywać nad wodą.",
-    "images": ["/images/ZALEW molo.jpg"]
+    "images": ["ZALEW molo.jpg"]
   },
 
   {
     "name": "Wycieczki rowerowe",
     "description": "Mamy wspaniałe tereny do zwiedzania na dwóch kołach. Klimat bajecznych łąk,bagien, pagórków i lasów najlepiej poczuć eksplorując je na rowerach.\n\nNa miejscu możliwość wypożyczenia rowerów.\n",
-    "images": ["/images/ŚCIEŻKA.jpg"]
+    "images": ["ŚCIEŻKA.jpg"]
   },
   {
     "name": "Zwiedzanie",
