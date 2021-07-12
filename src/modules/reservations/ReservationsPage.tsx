@@ -1,37 +1,40 @@
 import {Box, VStack} from '@chakra-ui/react';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import PageTitle from "../utils/PageTitle";
 import ReservationsCalendar from "./ReservationsCalendar";
-import TextSection from "../utils/TextSection";
+import TextSection, {convertJsonText} from "../utils/TextSection";
+
+interface ReservationPageText {
+    reservationsText: string,
+    paymentText: string
+}
 
 const ReservationsPage = () => {
+    const [model, setModel] = useState<ReservationPageText>();
+    useEffect(() => {
+        fetch('config/rezerwacje_info.json')
+            .then(response => response.json())
+            .then(pageText => setModel(pageText))
+    }, [setModel])
+
     return (
         <VStack spacing={8}>
             <PageTitle title={"Kalendarz rezerawacji"}/>
 
             <TextSection title={"Rezerwacje"}>
-                Ośrodek dysponuje domkami do 12 miejsc, z salonem, sypialnią, samodzielną w pełni wyposażoną kuchnią,
-                łazienką i dostępem do wi-fi
-                <br/><br/>
-                Cena za nocleg: 45-60 zł od osoby
-                <br/>
-                Dzieci do 3 lat gratis, od 3 do 7 lat połowa ceny.
+                {model &&
+                    convertJsonText(model.reservationsText)
+                }
 
             </TextSection>
 
             <ReservationsCalendar/>
 
             <TextSection title={"Płatność"}>
-                Płatność:<br/>
-                <br/>
-                1. PRZELEW NA KONTO:<br/>
-                Bank Spółdzielczy w Lubartowie<br/>
-                67 8707 0006 0500 9297 2000 0001<br/>
-                <br/>
-                2. GOTÓWKA<br/>
-                <br/>
-                3. BON TURYSTYCZNY
 
+                {model &&
+                    convertJsonText(model.paymentText)
+                }
 
             </TextSection>
 

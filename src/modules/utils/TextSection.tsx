@@ -1,5 +1,18 @@
-import React, {PropsWithChildren} from 'react';
+import React, {PropsWithChildren, useRef} from 'react';
 import {Box} from "@chakra-ui/react";
+
+export const convertJsonText = (text: string): JSX.Element => {
+    let key = 0;
+    return (
+        <>
+        {
+            text.split("\n").map(
+                text => <div key={key++}>{text}<br/></div>
+            )
+        }
+        </>
+    )
+}
 
 const TextSection = (props: PropsWithChildren<{ title: string }>) => {
     return (

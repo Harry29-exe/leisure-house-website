@@ -39,7 +39,7 @@ const MainPage = () => {
 
             {
                 model.paragraphs.map(
-                    p => <MainPageSection title={p.title} text={p.text} image={`images/${p.image}`}/>
+                    p => <MainPageSection key={p.title} title={p.title} text={p.text} image={`images/${p.image}`}/>
                 )
             }
 

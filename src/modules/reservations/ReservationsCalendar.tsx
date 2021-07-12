@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Calendar from 'react-calendar';
 import './Calendar.css';
-import {Box, Spinner, VStack} from "@chakra-ui/react";
+import {Box, Center, Flex, Spinner, VStack} from "@chakra-ui/react";
 import {websiteAddress} from "../../config/Address";
 
 interface Reservations {
@@ -55,7 +55,15 @@ const ReservationsCalendar = () => {
     return (
         <Box w={['100%', '300px', '400px', '800px', '1000px']}>
             {reservations ?
-                <Calendar tileDisabled={isDisabled}/>
+                <VStack w='100%'>
+                    <Calendar tileDisabled={isDisabled} locale='pl-PL'/>
+
+                    <Flex w='100%' p={4} fontSize={'25px'} justifyItems={'center'}
+                            bg={'primary.600'} border={'2px solid white'} borderRadius={'2xl'}>
+                        <Box display='inline-block' bg={'#08a1d2'} w='25px' h='25px' mx={5} my={1}/>
+                        - terminy zajęte
+                    </Flex>
+                </VStack>
                 :
                 <VStack color='white' fontSize={'2em'}>
                     <Spinner size={'xl'}/>
