@@ -7,7 +7,12 @@ export interface NewsModel {
     image: string
 }
 
-export const fetchNews = async (): Promise<NewsModel[]> => {
+export interface NewsPageModel {
+    socialMediaDescription: string,
+    news: NewsModel[]
+}
+
+export const fetchNews = async (): Promise<NewsPageModel> => {
     return await fetch("/config/aktualnosci.json")
         .then(response => response.json());
 }

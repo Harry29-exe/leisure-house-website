@@ -6,6 +6,7 @@ import {websiteAddress} from "../../config/Address";
 import {fetchMainPage, MainPageModel} from "./MainPagePresenter";
 import {MainPageHeader} from "./MainPageHeader";
 import MainPageSection from "./MainPageSection";
+import Footer from "../utils/footer/Footer";
 
 const MainPage = () => {
     const [model, setModel] = useState<MainPageModel>();
@@ -60,6 +61,8 @@ const MainPage = () => {
             {/*</Center>*/}
 
             <Box w={1} h={20}/>
+
+            <Footer/>
 
         </VStack>
     );

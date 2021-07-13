@@ -3,16 +3,27 @@ import {Box} from "@chakra-ui/react";
 
 export const convertJsonText = (text: string): JSX.Element => {
     let key = 0;
+
     return (
         <>
-        {
-            text.split("\n").map(
-                text => <div key={key++}>{text}<br/></div>
-            )
-        }
+            {text.split('\n').map(
+                t =>
+                <span key={key++} style={{whiteSpace: 'normal', wordBreak: 'break-word'}}>
+                    {t}<br/>
+                </span>
+            )}
+        {/*{*/}
+        {/*    text.split("\n").map(*/}
+        {/*        text =>*/}
+        {/*            <p key={key++} style={{textOverflow: "wrap"}}>*/}
+        {/*                {text}*/}
+        {/*                &#10;*/}
+        {/*            </p>*/}
+        {/*    )*/}
+        {/*}*/}
         </>
     )
-}
+};
 
 const TextSection = (props: PropsWithChildren<{ title: string }>) => {
     return (
