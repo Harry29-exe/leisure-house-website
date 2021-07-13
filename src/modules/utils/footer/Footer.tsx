@@ -38,16 +38,16 @@ const Footer = () => {
     }
 
     return (
-        <Flex justifyContent='center' w='100%' flexDirection='row' flexWrap='wrap' pos='relative' zIndex={1}
-              py={6} px={[2, 4, 2, 6, 10]} borderY={'2px solid white'} mb={'80px'}>
+        <Flex justifyContent='space-evenly' w='100%' flexDirection='row' flexWrap='wrap' pos='relative' zIndex={1}
+              py={6} px={[2, 4, 2, 6, 10]} borderTop={'2px solid white'} mt={'50px'} >
 
-            <Box overflow='auto' borderRadius={'2xl'} minH={'450px'}
-                 w={['350px', '450px', '350px', '400px', '700px']} mx={[0, 6, null, 4, 10]} my={[4, 0]} >
+            <Box overflow='auto' borderRadius={'2xl'} minH={'300px'}
+                 w={['350px', '450px', '350px', '450px', '700px']} mx={[0, 6, null, 4, 10]} my={[4, 0]} >
                 <iframe src={model.googleLink}
                         width="100%" height="100%" loading="lazy"/>
             </Box>
 
-            <Box w={['350px', '450px', '300px', '420px']} mx={[0, 6, null, 4, 10]} my={[4, 0]} fontSize={'1.5rem'} fontWeight={400} textOverflow={'wrap'}>
+            <Box w={['350px', '450px', '300px', '420px']} mx={[0, 6, null, 4, 10]} my={[4, 4, 4, 0]} fontWeight={400} textOverflow={'wrap'}>
                 {convertJsonText(model.contact)}
                 <Flex w='100%' flexWrap='wrap' justifyContent={'center'}>
                     {
@@ -65,12 +65,13 @@ const Footer = () => {
 
 const SocialMedium = (props: {name: string, color: string, link: string}) => {
     return (
-        <Link as={Center} href={"https://facebook.com"} border={"2px solid"} m={[4, null, '2.5%']}
-              minW={['100%', null, null, '45%']}
-              borderColor={"white"} borderRadius={'xl'} minH='60px' bg={props.color}>
+        <Center as={Link} href={"https://facebook.com"} border={"2px solid"} m={[4, null, '2.5%']}
+              minW={['100%', null, null, '45%']} pos='relative' zIndex={1} overflow='hidden'
+              borderColor={"white"} borderRadius={'xl'} minH='60px' isExternal>
             {props.name}
-        </Link>
+            <Box pos='absolute' w='100%' h='100%' opacity={0.5} bg={props.color} zIndex={-1}/>
+        </Center>
     );
-};
+} ;
 
 export default Footer;

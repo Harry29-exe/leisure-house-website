@@ -60,10 +60,6 @@ const MainPage = () => {
             {/*    </Link>*/}
             {/*</Center>*/}
 
-            <Box w={1} h={20}/>
-
-            <Footer/>
-
         </VStack>
     );
 };

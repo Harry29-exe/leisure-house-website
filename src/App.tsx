@@ -10,6 +10,7 @@ import NewsPage from "./modules/news/NewsPage";
 import ReservationsPage from "./modules/reservations/ReservationsPage";
 import ContactPage from "./modules/Contact/ContactPage";
 import GalleryPage from "./modules/gallery/GalleryPage";
+import Footer from "./modules/utils/footer/Footer";
 
 export const App = () => (
     <ChakraProvider theme={Theme}>
@@ -48,6 +49,8 @@ export const App = () => (
                         <ContactPage/>
                     </Route>
                 </Switch>
+
+                <Footer/>
 
             </BrowserRouter>
         </div>

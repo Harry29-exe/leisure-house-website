@@ -1,12 +1,12 @@
 import React, {useState} from 'react';
 import {Box, Center, Flex, Link, VStack} from "@chakra-ui/react";
 import News from './News';
-import {fetchNews, NewsPageModel} from "./NewsPresenter";
+import {fetchNews, NewsPageModel, SocialMediaModel} from "./NewsPresenter";
 import PageTitle from "../utils/PageTitle";
 import TextSection from "../utils/TextSection";
 
 const NewsPage = () => {
-    const [state, setState] = useState<NewsPageModel>();
+    const [state, setState] = useState<NewsPageModel & {socialMedia: SocialMediaModel[]}>();
 
     if (!state) {
         fetchNews()
@@ -27,10 +27,11 @@ const NewsPage = () => {
             <TextSection title={"Social media"}>
                 <h3>{state.socialMediaDescription}</h3>
                 <Flex w='100%' flexWrap='wrap' justifyContent={'center'}>
-                    <SocialMedium name={'Facebook'} color={'blue.400'}/>
-                    <SocialMedium name={'Twitter'} color={'blue.800'}/>
-                    <SocialMedium name={'Instagram'} color={'purple.600'}/>
-                    <SocialMedium name={'Youtube'} color={'red.400'}/>
+                    {
+                        state.socialMedia.map(
+                            sm => <SocialMedium name={sm.name} color={sm.color} link={sm.link}/>
+                        )
+                    }
                 </Flex>
 
             </TextSection>
@@ -48,13 +49,16 @@ const NewsPage = () => {
     );
 };
 
-const SocialMedium = (props: {name: string, color: string}) => {
+const SocialMedium = (props: {name: string, color: string, link: string}) => {
     return (
-        <Link as={Center} href={"https://facebook.com"} border={"2px solid"} m={[4, null, '2.5%']}
-              w={['90%', null, '45%']} fontWeight={600}
-              borderColor={"white"} borderRadius={'xl'} minH='100px' bg={props.color}>
+        <Center as={Link} href={props.link} border={"2px solid"} m={[4, null, '2.5%']}
+              w={['90%', null, '45%']} fontWeight={600} pos={'relative'} zIndex={1} overflow={'hidden'}
+              borderColor={"white"} borderRadius={'xl'} minH='100px' isExternal>
+
             {props.name}
-        </Link>
+
+            <Box bg={props.color} opacity={0.75} pos={'absolute'} w={'100%'} h={'100%'} zIndex={-1}/>
+        </Center>
     );
 };
 
