@@ -5,11 +5,16 @@ import TextSection, { convertJsonText } from "../TextSection";
 class FooterModel {
     public googleLink?: string;
     public contact?: string;
+    public email?: string;
+    public telephone?: string;
     public socialMedia?: {name: string, link: string, color: string}[];
 
-    constructor(googleLink?: string, contact?: string, socialMedia?: {name: string, link: string, color: string}[]) {
+
+    constructor(googleLink?: string, contact?: string, email?: string, telephone?: string, socialMedia?: { name: string; link: string; color: string }[]) {
         this.googleLink = googleLink;
         this.contact = contact;
+        this.email = email;
+        this.telephone = telephone;
         this.socialMedia = socialMedia;
     }
 }
@@ -23,6 +28,8 @@ const Footer = () => {
             .then(contact => {
                 model.googleLink = contact.googleMapsSrc;
                 model.contact = contact.contact;
+                model.email = contact.email;
+                model.telephone = contact.telephone;
             });
 
         let socialMediaPromise = fetch('config/social_media.json')
@@ -30,7 +37,7 @@ const Footer = () => {
             .then(socialMedia => model.socialMedia = socialMedia);
 
         Promise.all([contactAndMap, socialMediaPromise])
-            .then(() => setModel(new FooterModel(model.googleLink, model.contact, model.socialMedia)));
+            .then(() => setModel(new FooterModel(model.googleLink, model.contact, model.email, model.telephone, model.socialMedia)));
     }, [setModel])
 
     if(!model.socialMedia || !model.googleLink || !model.contact) {
@@ -38,17 +45,21 @@ const Footer = () => {
     }
 
     return (
-        <Flex justifyContent='space-evenly' w='100%' flexDirection='row' flexWrap='wrap' pos='relative' zIndex={1}
+        <Flex justifyContent='center' w='100%' flexDirection='row' flexWrap='wrap' pos='relative' zIndex={1}
               py={6} px={[2, 4, 2, 6, 10]} borderTop={'2px solid white'} mt={'50px'} >
 
             <Box overflow='auto' borderRadius={'2xl'} minH={'300px'}
-                 w={['350px', '450px', '350px', '450px', '700px']} mx={[0, 6, null, 4, 10]} my={[4, 0]} >
+                 w={['350px', '450px', '350px', '450px', '50%']} mx={[0, 6, null, 4, 10]} my={[4, 0]} >
                 <iframe src={model.googleLink}
                         width="100%" height="100%" loading="lazy"/>
             </Box>
 
             <Box w={['350px', '450px', '300px', '420px']} mx={[0, 6, null, 4, 10]} my={[4, 4, 4, 0]} fontWeight={400} textOverflow={'wrap'}>
                 {convertJsonText(model.contact)}
+                Telefon: <a href={`tel:${model.telephone}`} style={{textDecoration: 'underline'}}>{model.telephone}</a>
+                <br/>
+                Email: <a href={`mailto:${model.email}`} style={{textDecoration: 'underline'}}>{model.email}</a>
+
                 <Flex w='100%' flexWrap='wrap' justifyContent={'center'}>
                     {
                         model.socialMedia.map(
