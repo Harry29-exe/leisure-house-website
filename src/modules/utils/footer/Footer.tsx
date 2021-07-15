@@ -54,7 +54,7 @@ const Footer = () => {
                         width="100%" height="100%" loading="lazy"/>
             </Box>
 
-            <Box w={['350px', '450px', '300px', '420px']} mx={[0, 6, null, 4, 10]} my={[4, 4, 4, 0]} fontWeight={400} textOverflow={'wrap'}>
+            <Box w={['350px', '450px', '300px', '420px']} fontSize={['1rem', null, null, '20px']} mx={[0, 6, null, 4, 10]} my={[4, 4, 4, 0]} fontWeight={400} textOverflow={'wrap'}>
                 {convertJsonText(model.contact)}
                 Telefon: <a href={`tel:${model.telephone}`} style={{textDecoration: 'underline'}}>{model.telephone}</a>
                 <br/>
