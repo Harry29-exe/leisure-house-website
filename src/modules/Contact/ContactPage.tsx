@@ -5,7 +5,9 @@ import TextSection, {convertJsonText} from "../utils/TextSection";
 
 interface ContactPageModel {
     googleMapsSrc: string,
-    contact: string
+    contact: string,
+    telephone: string,
+    email: string
 }
 
 const ContactPage = () => {
@@ -38,7 +40,9 @@ const ContactPage = () => {
             <PageTitle title={"Kontakt"}/>
             <TextSection title={"Kontakt"}>
                 {convertJsonText(model.contact)}
-
+                    Telefon: <a href={`tel:${model.contact}`} style={{textDecoration: 'underline'}}>{model.telephone}</a>
+                    <br/>
+                    Email: <a href={`mailto:${model.email}`} style={{textDecoration: 'underline'}}>{model.email}</a>
             </TextSection>
 
 

@@ -24,7 +24,7 @@ const News = (props: { news: NewsModel }) => {
                         </VStack>
 
                         <Center w='60%'>
-                            <Image w='100%' h={['300px', null, '400px']} src={'images' + props.news.image}
+                            <Image w='100%' h={['300px', null, '400px']} src={'images/' + props.news.image}
                                    objectFit={'cover'}
                                    borderRadius={'2xl'} my={6}/>
                         </Center>
@@ -42,7 +42,7 @@ const News = (props: { news: NewsModel }) => {
                         </VStack>
 
                         <Center w='90%'>
-                            <Image w='100%' h={['300px', null, '400px']} src={'images' + props.news.image}
+                            <Image w='100%' h={['300px', null, '400px']} src={'images/' + props.news.image}
                                    objectFit={'cover'}
                                    borderRadius={'2xl'} my={6}/>
                         </Center>

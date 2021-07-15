@@ -21,7 +21,7 @@ export const App = () => (
             height: "100%",
             minHeight: "100vh"
         }}>
-            <BrowserRouter>
+            <HashRouter>
                 <VNavbar/>
 
                 <Switch>
@@ -52,7 +52,7 @@ export const App = () => (
 
                 <Footer/>
 
-            </BrowserRouter>
+            </HashRouter>
         </div>
     </ChakraProvider>
 )
