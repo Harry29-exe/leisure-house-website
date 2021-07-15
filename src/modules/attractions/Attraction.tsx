@@ -40,7 +40,7 @@ const Attraction = (props: { attraction: AttractionModel }) => {
                                       w='45%' m='2.5%' maxH={maxH} borderRadius={'2xl'}/>
                         )}
                         <AppImage key={images[images.length - 1]} img={websiteAddress + 'images/' + images[images.length - 1]}
-                                  w='95%' m='2.5%' maxH={maxH} borderRadius={'2xl'}/>
+                                  w={[null, null, null, '75%', '65%', '60%']} m='2.5%' maxH={maxH} borderRadius={'2xl'}/>
                     </Flex>
             }
 
