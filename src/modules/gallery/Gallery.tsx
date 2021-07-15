@@ -17,17 +17,17 @@ export const Gallery = (props: GalleryProps) => {
     const prevImage = () => setActiveImage(activeImage - 1 <= 0? images.length - 1: activeImage - 1);
 
     return (
-        <Box w='100%' h='100%' pos='relative' borderRadius={'2xl'} overflow='hidden'>
+        <Box w='100%' h='100vh' pos='relative' borderRadius={'2xl'} overflow='hidden'>
 
-            <ImageChangeButton onClick={nextImage} direction='left'/>
+            <ImageChangeButton onClick={prevImage} direction='left'/>
 
-            <Center w='100%' h='100%'  pos={'relative'} top={0} left='0%'>
+            <Center pos='relative' w='100%' h='100%' top={0} left={0}>
                 <Image maxH='100%' h='100%' w='100%' objectFit='contain'
                        src={`${websiteAddress}/images/${images[activeImage]}`} alt={images[activeImage]}
                 />
             </Center>
 
-            <ImageChangeButton onClick={prevImage} direction={'right'}/>
+            <ImageChangeButton onClick={nextImage} direction={'right'}/>
 
         </Box>
     );
@@ -38,7 +38,7 @@ const ImageChangeButton = (props: {onClick: () => void, direction: "left" | "rig
     return (
         <Center pos={'absolute'} top={'12.5%'} left={isLeft? 0: '90%'} w={'10%'} h='75%' zIndex={10}
                 overflow='hidden'
-                opacity={0.7} _hover={{opacity: 1, cursor: 'pointer', background: "whiteAlpha.400"}}
+                opacity={0.9} _hover={{opacity: 1, cursor: 'pointer', background: "whiteAlpha.400"}}
                 borderRadius={'xl'}
                 onClick={props.onClick}>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+    Box,
     Drawer, DrawerBody, DrawerCloseButton, DrawerContent,
     DrawerHeader,
     DrawerOverlay,
@@ -21,19 +22,23 @@ interface GalleryModalParams {
 
 const GalleryModal = (props: GalleryModalParams) => {
     return (
-        <Drawer isOpen={props.isOpen} onClose={props.onClose} size='full'>
-            <DrawerOverlay/>
+        <Modal isOpen={props.isOpen} onClose={props.onClose} size='full'
+                 allowPinchZoom motionPreset={"scale"} >
+            <ModalOverlay/>
 
-            <DrawerContent  bg={"primary.600"} p={0} m={0}>
-                <DrawerHeader>
-                    <DrawerCloseButton onClick={props.onClose} fontSize={'1.5rem'}/>
-                </DrawerHeader>
+            <ModalContent background={'#ffffff00'} p={0} m={0} motionPreset={"none"}>
 
-                <DrawerBody w='100%' h='90%' p={0} m={0}>
+                <ModalBody w='100%' h='100vh' p={0} m={0}>
+
                     <Gallery activeImageIndex={props.activeImage} images={props.imagesArray}/>
-                </DrawerBody>
-            </DrawerContent>
-        </Drawer>
+
+                    <Box pos='absolute' w='100%' h='100%' top={0} left={0} bg={'gray.700'} opacity={1} zIndex={-1}/>
+                </ModalBody>
+
+                <ModalCloseButton onClick={props.onClose} fontSize={'1.5rem'}/>
+
+            </ModalContent>
+        </Modal>
     );
 };
 
