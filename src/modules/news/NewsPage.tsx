@@ -24,8 +24,12 @@ const NewsPage = () => {
 
             <PageTitle title={"Aktualności"}/>
 
-            <TextSection title={"Social media"}>
-                <h3>{state.socialMediaDescription}</h3>
+            <VStack w={['95%', '90%', '80%', '75%']} mx='auto' pos='relative' zIndex={1} overflow={'hidden'}
+                 borderRadius={'2xl'} border={'2px solid white'} spacing={0}>
+
+                <Box fontSize={'2rem'} fontWeight={400} mt={4} px={'2.5%'} textAlign='center' w='100%'>
+                    {state.socialMediaDescription}
+                </Box>
                 <Flex w='100%' flexWrap='wrap' justifyContent={'center'}>
                     {
                         state.socialMedia.map(
@@ -34,7 +38,9 @@ const NewsPage = () => {
                     }
                 </Flex>
 
-            </TextSection>
+                <Box pos='absolute' top={0} left={0} bg={'primary.700'} opacity={0.8}
+                     w='100%' h='100%' zIndex={-1}/>
+            </VStack>
 
             <VStack w='100%' h='100%' spacing={20} mt={20}>
                 {

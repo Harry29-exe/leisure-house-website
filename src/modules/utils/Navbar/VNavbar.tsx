@@ -49,10 +49,11 @@ const VNavbar = () => {
                     </>
                     :
                     <>
-                        <Center>
-                            <Button onClick={onOpen} variant={"ghost"} leftIcon={<HamburgerIcon fontSize="2em"/>}/>
-                        </Center>
                         <Box flexGrow={2}/>
+                        <Center>
+                            <Button minW='120px' onClick={onOpen} variant={"ghost"}
+                                    leftIcon={<HamburgerIcon fontSize="2em"/>}/>
+                        </Center>
 
                         <MobileNavbar isOpen={isOpen} onClose={onClose}/>
 

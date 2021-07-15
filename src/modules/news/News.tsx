@@ -49,7 +49,7 @@ const News = (props: { news: NewsModel }) => {
                     </VStack>
                 }
 
-                <Box pos='absolute' top={0} left={0} bg={'primary.600'} opacity={0.8}
+                <Box pos='absolute' top={0} left={0} bg={'primary.700'} opacity={0.8}
                      w='100%' h='100%' zIndex={-1} border={'2px solid white'} borderRadius={'2xl'}/>
             </Box>
 
