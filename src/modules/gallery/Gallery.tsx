@@ -71,7 +71,7 @@ export const Gallery = (props: GalleryProps) => {
 const ImageChangeButton = (props: { onClick: () => void, direction: "left" | "right" }) => {
     const isLeft = props.direction === 'left';
     return (
-        <Center pos={'absolute'} left={isLeft ? 0 : 'auto'} right={!isLeft? 0: 'auto'} w={'10%'} minW={'75px'}
+        <Center pos={'absolute'} left={isLeft ? 0 : 'auto'} right={!isLeft ? 0 : 'auto'} w={'10%'} minW={'75px'}
                 h={['50%', null, '60%', '75%']} top={['25%', null, '20%', '12.5%']} zIndex={10}
                 overflow='hidden'
                 opacity={0.9} _hover={{opacity: 1, cursor: 'pointer', background: "whiteAlpha.400"}}

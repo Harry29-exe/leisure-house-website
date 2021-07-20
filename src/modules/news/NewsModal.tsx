@@ -1,5 +1,5 @@
 import React from 'react';
-import {Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay} from "@chakra-ui/react";
+import {Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, VStack} from "@chakra-ui/react";
 import {convertJsonText} from "../utils/TextSection";
 
 const NewsModal = (props: { onClose: any, isOpen: any, title: string, content: string }) => {
@@ -15,7 +15,9 @@ const NewsModal = (props: { onClose: any, isOpen: any, title: string, content: s
                 <ModalCloseButton size={'lg'}/>
 
                 <ModalBody fontSize={'1.1rem'}>
-                    {convertJsonText(props.content)}
+                    <VStack maxH={'80vh'} overflow='auto'>
+                        {convertJsonText(props.content)}
+                    </VStack>
                 </ModalBody>
             </ModalContent>
         </Modal>

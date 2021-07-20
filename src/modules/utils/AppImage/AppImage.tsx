@@ -12,10 +12,11 @@ const AppImage = (props: ChakraProps & { img: string, withoutBorder?: boolean, m
             <Box onClick={onOpen} {...style} _hover={{cursor: "zoom-in"}}
                  boxShadow={props.withoutBorder ? '' : ["0 0 5px 3px white", null, "0 0 8px 5px white"]}
                  pos={"relative"} overflow={"hidden"}
-                 minW={isLoaded? 0: minW? minW: '150px'} minH={isLoaded? 0: minH? minH:'300px'}>
+                 minW={isLoaded ? 0 : minW ? minW : '150px'} minH={isLoaded ? 0 : minH ? minH : '300px'}>
 
 
-                <Image src={props.img} w="100%" h="100%" objectFit='cover' maxH={"inherit"} onLoad={() => setLoaded(true)}/>
+                <Image src={props.img} w="100%" h="100%" objectFit='cover' maxH={"inherit"}
+                       onLoad={() => setLoaded(true)}/>
 
                 {!isLoaded &&
                 <Center minH={'100%'} minW={'100%'} pos='absolute' top={0} left={0}>

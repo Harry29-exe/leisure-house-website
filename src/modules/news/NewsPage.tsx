@@ -26,7 +26,8 @@ const NewsPage = () => {
             <VStack w={['95%', '90%', '80%', '75%']} mx='auto' pos='relative' zIndex={1} overflow={'hidden'}
                     borderRadius={'2xl'} border={'2px solid white'} spacing={0}>
 
-                <Box fontSize={['xl', null, null, '2xl']} fontWeight={600} mt={4} px={'2.5%'} textAlign='center' w='100%'>
+                <Box fontSize={['xl', null, null, '2xl']} fontWeight={600} mt={4} px={'2.5%'} textAlign='center'
+                     w='100%'>
                     {state.socialMediaDescription}
                 </Box>
                 <Flex w='100%' flexWrap='wrap' justifyContent={'center'}>
