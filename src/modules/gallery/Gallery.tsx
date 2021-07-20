@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Box, Center, Image} from "@chakra-ui/react";
-import {BiLeftArrow, BiRightArrow, BiRightArrowAlt, BiRightArrowCircle} from "react-icons/all";
+import {BiLeftArrow, BiRightArrow} from "react-icons/all";
 import {websiteAddress} from "../../config/Address";
 
 interface GalleryProps {
@@ -12,9 +12,9 @@ export const Gallery = (props: GalleryProps) => {
     const images = props.images;
     const [activeImage, setActiveImage] = useState<number>(props.activeImageIndex);
 
-    const nextImage = () => setActiveImage(activeImage + 1 >= images.length? 0: activeImage+1);
+    const nextImage = () => setActiveImage(activeImage + 1 >= images.length ? 0 : activeImage + 1);
 
-    const prevImage = () => setActiveImage(activeImage - 1 <= 0? images.length - 1: activeImage - 1);
+    const prevImage = () => setActiveImage(activeImage - 1 <= 0 ? images.length - 1 : activeImage - 1);
 
     return (
         <Box w='100%' h='100vh' pos='relative' borderRadius={'2xl'} overflow='hidden'>
@@ -33,10 +33,10 @@ export const Gallery = (props: GalleryProps) => {
     );
 };
 
-const ImageChangeButton = (props: {onClick: () => void, direction: "left" | "right"}) => {
+const ImageChangeButton = (props: { onClick: () => void, direction: "left" | "right" }) => {
     const isLeft = props.direction === 'left';
     return (
-        <Center pos={'absolute'} top={'12.5%'} left={isLeft? 0: '90%'} w={'10%'} h='75%' zIndex={10}
+        <Center pos={'absolute'} top={'12.5%'} left={isLeft ? 0 : '90%'} w={'10%'} h='75%' zIndex={10}
                 overflow='hidden'
                 opacity={0.9} _hover={{opacity: 1, cursor: 'pointer', background: "whiteAlpha.400"}}
                 borderRadius={'xl'}

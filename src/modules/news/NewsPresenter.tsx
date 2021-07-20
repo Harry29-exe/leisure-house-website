@@ -1,5 +1,3 @@
-import {websiteAddress} from "../../config/Address";
-
 export interface NewsModel {
     name: string,
     shortDescription: string,
@@ -18,13 +16,13 @@ export interface NewsPageModel {
     news: NewsModel[]
 }
 
-export const fetchNews = async (): Promise<NewsPageModel & {socialMedia: SocialMediaModel[]}> => {
+export const fetchNews = async (): Promise<NewsPageModel & { socialMedia: SocialMediaModel[] }> => {
     let newsPromise = fetch("/config/aktualnosci.json")
         .then(response => response.json());
     let socialMediaPromise = fetch('config/social_media.json')
         .then(response => response.json());
 
-    return  Promise.all([newsPromise, socialMediaPromise])
+    return Promise.all([newsPromise, socialMediaPromise])
         .then(data => {
             return {
                 socialMediaDescription: data[0].socialMediaDescription,

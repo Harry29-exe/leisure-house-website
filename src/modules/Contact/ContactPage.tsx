@@ -19,7 +19,7 @@ const ContactPage = () => {
             .then(pageText => setModel(pageText))
     }, [setModel])
 
-    if(!model) {
+    if (!model) {
         return <></>
     }
 
@@ -30,7 +30,7 @@ const ContactPage = () => {
                  borderRadius={'2xl'}>
                 <Box overflow='hidden' borderRadius={'2xl'}>
                     <iframe src={model.googleMapsSrc}
-                        width="100%" height="450" loading="lazy"/>
+                            width="100%" height="450" loading="lazy"/>
                 </Box>
 
                 <Box w='100%' h='100%' pos='absolute' bg={"primary.600"} opacity={0.8} top={0} left={0} zIndex={-1}/>
@@ -40,9 +40,9 @@ const ContactPage = () => {
             <PageTitle title={"Kontakt"}/>
             <TextSection title={"Kontakt"}>
                 {convertJsonText(model.contact)}
-                    Telefon: <a href={`tel:${model.contact}`} style={{textDecoration: 'underline'}}>{model.telephone}</a>
-                    <br/>
-                    Email: <a href={`mailto:${model.email}`} style={{textDecoration: 'underline'}}>{model.email}</a>
+                Telefon: <a href={`tel:${model.contact}`} style={{textDecoration: 'underline'}}>{model.telephone}</a>
+                <br/>
+                Email: <a href={`mailto:${model.email}`} style={{textDecoration: 'underline'}}>{model.email}</a>
             </TextSection>
 
 

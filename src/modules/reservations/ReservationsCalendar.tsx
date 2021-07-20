@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Calendar from 'react-calendar';
 import './Calendar.css';
-import {Box, Center, Flex, Spinner, VStack} from "@chakra-ui/react";
+import {Box, Flex, Spinner, VStack} from "@chakra-ui/react";
 import {websiteAddress} from "../../config/Address";
 
 interface Reservations {
@@ -59,16 +59,18 @@ const ReservationsCalendar = () => {
                     <Calendar tileDisabled={isDisabled} locale='pl-PL'/>
 
                     <Flex w='100%' p={4} fontSize={'25px'} justifyItems={'center'} flexWrap='wrap' pos='relative'
-                            border={'2px solid white'} borderRadius={'2xl'} overflow={'hidden'} zIndex={1}>
+                          border={'2px solid white'} borderRadius={'2xl'} overflow={'hidden'} zIndex={1}>
                         <Box display='inline-block' bg={'#08a1d2'} w='25px' h='25px' mx={5} my={1} borderRadius={'sm'}/>
                         - terminy zajęte
 
                         <Box w={'100%'} h={1}/>
 
-                        <Box display='inline-block' bg={'primary.500'} w='25px' h='25px' mx={5} my={1}  borderRadius={'sm'}/>
+                        <Box display='inline-block' bg={'primary.500'} w='25px' h='25px' mx={5} my={1}
+                             borderRadius={'sm'}/>
                         - terminy wolne
 
-                        <Box pos='absolute' w='100%' h='100%' top={0} left={0} bg={'primary.700'} zIndex={-1} opacity={0.9}/>
+                        <Box pos='absolute' w='100%' h='100%' top={0} left={0} bg={'primary.700'} zIndex={-1}
+                             opacity={0.9}/>
                     </Flex>
                 </VStack>
                 :

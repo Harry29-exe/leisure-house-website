@@ -1,16 +1,5 @@
 import React from 'react';
-import {
-    Box,
-    Drawer, DrawerBody, DrawerCloseButton, DrawerContent,
-    DrawerHeader,
-    DrawerOverlay,
-    Modal,
-    ModalBody,
-    ModalCloseButton,
-    ModalContent,
-    ModalHeader,
-    ModalOverlay
-} from "@chakra-ui/react";
+import {Box, Modal, ModalBody, ModalCloseButton, ModalContent, ModalOverlay} from "@chakra-ui/react";
 import {Gallery} from "./Gallery";
 
 interface GalleryModalParams {
@@ -23,7 +12,7 @@ interface GalleryModalParams {
 const GalleryModal = (props: GalleryModalParams) => {
     return (
         <Modal isOpen={props.isOpen} onClose={props.onClose} size='full'
-                 allowPinchZoom motionPreset={"scale"} >
+               allowPinchZoom motionPreset={"scale"}>
             <ModalOverlay/>
 
             <ModalContent background={'#ffffff00'} p={0} m={0} motionPreset={"none"}>

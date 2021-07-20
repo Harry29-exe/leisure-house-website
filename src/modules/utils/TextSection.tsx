@@ -1,4 +1,4 @@
-import React, {PropsWithChildren, useRef} from 'react';
+import React, {PropsWithChildren} from 'react';
 import {Box} from "@chakra-ui/react";
 
 export const convertJsonText = (text: string): JSX.Element => {
@@ -8,19 +8,19 @@ export const convertJsonText = (text: string): JSX.Element => {
         <>
             {text.split('\n').map(
                 t =>
-                <span key={key++} style={{whiteSpace: 'normal', wordBreak: 'break-word'}}>
+                    <span key={key++} style={{whiteSpace: 'normal', wordBreak: 'break-word'}}>
                     {t}<br/>
                 </span>
             )}
-        {/*{*/}
-        {/*    text.split("\n").map(*/}
-        {/*        text =>*/}
-        {/*            <p key={key++} style={{textOverflow: "wrap"}}>*/}
-        {/*                {text}*/}
-        {/*                &#10;*/}
-        {/*            </p>*/}
-        {/*    )*/}
-        {/*}*/}
+            {/*{*/}
+            {/*    text.split("\n").map(*/}
+            {/*        text =>*/}
+            {/*            <p key={key++} style={{textOverflow: "wrap"}}>*/}
+            {/*                {text}*/}
+            {/*                &#10;*/}
+            {/*            </p>*/}
+            {/*    )*/}
+            {/*}*/}
         </>
     )
 };

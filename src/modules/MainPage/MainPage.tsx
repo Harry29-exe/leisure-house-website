@@ -1,12 +1,10 @@
-import React, {useEffect, useRef, useState} from 'react';
-import {Box, Center, VStack} from "@chakra-ui/react";
+import React, {useEffect, useState} from 'react';
+import {Center, VStack} from "@chakra-ui/react";
 import TextSection from '../utils/TextSection';
 import AppImage from "../utils/AppImage/AppImage";
-import {websiteAddress} from "../../config/Address";
 import {fetchMainPage, MainPageModel} from "./MainPagePresenter";
 import {MainPageHeader} from "./MainPageHeader";
 import MainPageSection from "./MainPageSection";
-import Footer from "../utils/footer/Footer";
 
 const MainPage = () => {
     const [model, setModel] = useState<MainPageModel>();

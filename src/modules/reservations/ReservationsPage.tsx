@@ -23,7 +23,7 @@ const ReservationsPage = () => {
 
             <TextSection title={"Rezerwacje"}>
                 {model &&
-                    convertJsonText(model.reservationsText)
+                convertJsonText(model.reservationsText)
                 }
 
             </TextSection>
@@ -33,7 +33,7 @@ const ReservationsPage = () => {
             <TextSection title={"Płatność"}>
 
                 {model &&
-                    convertJsonText(model.paymentText)
+                convertJsonText(model.paymentText)
                 }
 
             </TextSection>

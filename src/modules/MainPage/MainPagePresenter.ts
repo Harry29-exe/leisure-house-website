@@ -3,7 +3,7 @@ export interface MainPageModel {
         text: string,
         image: string
     },
-    paragraphs: {title: string, text: string, image: string}[]
+    paragraphs: { title: string, text: string, image: string }[]
 }
 
 export const fetchMainPage = async (): Promise<MainPageModel> => {

@@ -39,7 +39,7 @@ const VNavbar = () => {
                 :
                 navbarType === "small" ?
                     <>
-                        <VNavbarLink name="Majdan zachorodyński" path="/"/>
+                        <VNavbarLink name="Zaścianek zachorodyński" path="/"/>
                         <Box flexGrow={2}/>
                         <Center>
                             <Button onClick={onOpen} variant={"ghost"} leftIcon={<HamburgerIcon/>}/>

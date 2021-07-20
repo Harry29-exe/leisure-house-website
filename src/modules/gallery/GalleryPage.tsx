@@ -50,7 +50,7 @@ const GalleryPage = () => {
             </VStack>
 
             <GalleryModal isOpen={isOpen} onClose={onClose}
-                          imagesArray={imageList? imageList: []} activeImage={activeImageIndex} />
+                          imagesArray={imageList ? imageList : []} activeImage={activeImageIndex}/>
         </>
     );
 };

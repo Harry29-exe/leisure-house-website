@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import {Box, Center, Flex, Link} from "@chakra-ui/react";
-import TextSection, { convertJsonText } from "../TextSection";
+import {convertJsonText} from "../TextSection";
 
 class FooterModel {
     public googleLink?: string;
     public contact?: string;
     public email?: string;
     public telephone?: string;
-    public socialMedia?: {name: string, link: string, color: string}[];
+    public socialMedia?: { name: string, link: string, color: string }[];
 
 
     constructor(googleLink?: string, contact?: string, email?: string, telephone?: string, socialMedia?: { name: string; link: string; color: string }[]) {
@@ -40,21 +40,22 @@ const Footer = () => {
             .then(() => setModel(new FooterModel(model.googleLink, model.contact, model.email, model.telephone, model.socialMedia)));
     }, [setModel])
 
-    if(!model.socialMedia || !model.googleLink || !model.contact) {
+    if (!model.socialMedia || !model.googleLink || !model.contact) {
         return <></>
     }
 
     return (
         <Flex justifyContent='center' w='100%' flexDirection='row' flexWrap='wrap' pos='relative' zIndex={1}
-              py={6} px={[2, 4, 2, 6, 10]} borderTop={'2px solid white'} mt={'50px'} >
+              py={6} px={[2, 4, 2, 6, 10]} borderTop={'2px solid white'} mt={'50px'}>
 
             <Box overflow='auto' borderRadius={'2xl'} minH={'300px'}
-                 w={['350px', '450px', '350px', '450px', '50%']} mx={[0, 6, null, 4, 10]} my={[4, 0]} >
+                 w={['350px', '450px', '350px', '450px', '50%']} mx={[0, 6, null, 4, 10]} my={[4, 0]}>
                 <iframe src={model.googleLink}
                         width="100%" height="100%" loading="lazy"/>
             </Box>
 
-            <Box w={['350px', '450px', '300px', '420px']} fontSize={['1rem', null, null, '20px']} mx={[0, 6, null, 4, 10]} my={[4, 4, 4, 0]} fontWeight={400} textOverflow={'wrap'}>
+            <Box w={['350px', '450px', '300px', '420px']} fontSize={['1rem', null, null, '20px']}
+                 mx={[0, 6, null, 4, 10]} my={[4, 4, 4, 0]} fontWeight={400} textOverflow={'wrap'}>
                 {convertJsonText(model.contact)}
                 Telefon: <a href={`tel:${model.telephone}`} style={{textDecoration: 'underline'}}>{model.telephone}</a>
                 <br/>
@@ -74,15 +75,15 @@ const Footer = () => {
     );
 };
 
-const SocialMedium = (props: {name: string, color: string, link: string}) => {
+const SocialMedium = (props: { name: string, color: string, link: string }) => {
     return (
         <Center as={Link} href={"https://facebook.com"} border={"2px solid"} m={[4, null, '2.5%']}
-              minW={['100%', null, null, '45%']} pos='relative' zIndex={1} overflow='hidden'
-              borderColor={"white"} borderRadius={'xl'} minH='60px' isExternal>
+                minW={['100%', null, null, '45%']} pos='relative' zIndex={1} overflow='hidden'
+                borderColor={"white"} borderRadius={'xl'} minH='60px' isExternal>
             {props.name}
             <Box pos='absolute' w='100%' h='100%' opacity={0.5} bg={props.color} zIndex={-1}/>
         </Center>
     );
-} ;
+};
 
 export default Footer;

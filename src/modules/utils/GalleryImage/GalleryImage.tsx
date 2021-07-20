@@ -1,16 +1,23 @@
-import React from 'react';
-import {Box, ChakraProps, Image, useDisclosure} from "@chakra-ui/react";
-import AppImageModal from "./AppImageModal";
+import React, {useState} from 'react';
+import {Box, ChakraProps, Image, Spinner} from "@chakra-ui/react";
 
-const GalleryImage = (props: ChakraProps & { img: string, imgIndex: number, onClick: (imgIndex: number) => any}) => {
+const GalleryImage = (props: ChakraProps & { img: string, imgIndex: number, onClick: (imgIndex: number) => any }) => {
     const {img, imgIndex, ...style} = props;
+    const [isLoaded, setLoaded] = useState<boolean>(false);
 
     return (
         <Box {...style} onClick={() => props.onClick(imgIndex)} _hover={{cursor: "zoom-in"}} borderRadius={'xl'}
              boxShadow={["0 0 5px 3px white", null, "0 0 8px 5px white"]}
-             pos={"relative"} m={[3, 5, 6]}>
+             pos={"relative"} m={[3, 5, 6]}
+             minW={isLoaded? 0: '150px'} minH={isLoaded? 0: '300px'}>
 
-            <Image src={props.img} objectFit='cover' maxH={"inherit"} borderRadius={'xl'}/>
+            <Image src={props.img} objectFit='cover' onLoad={() => setLoaded(true)} maxH={"inherit"}
+                   borderRadius={'xl'}/>
+
+            {!isLoaded &&
+            <Spinner minH={'125px'} minW={'125px'} pos='absolute' top={'75px'} left={'12.5px'} thickness={'5px'}
+                     color={'primary.600'} emptyColor={'gray.600'}/>
+            }
             <Box pos="absolute" top={0} left={0} w="100%" h="100%" maxH="inherit" borderRadius={'xl'}
                  boxShadow={["inset 0 0 5px 3px white", null, "inset 0 0 8px 5px white"]}/>
 
