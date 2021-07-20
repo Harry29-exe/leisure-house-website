@@ -56,11 +56,11 @@ const ReservationsCalendar = () => {
         <Box w={['100%', '300px', '400px', '800px', '1000px']}>
             {reservations ?
                 <VStack w='100%'>
-                    <Calendar tileDisabled={isDisabled} locale='pl-PL'/>
+                    <Calendar tileDisabled={isDisabled} locale='pl-PL' minDetail={"month"} maxDetail={"month"}/>
 
                     <Flex w='100%' p={4} fontSize={'25px'} justifyItems={'center'} flexWrap='wrap' pos='relative'
                           border={'2px solid white'} borderRadius={'2xl'} overflow={'hidden'} zIndex={1}>
-                        <Box display='inline-block' bg={'#08a1d2'} w='25px' h='25px' mx={5} my={1} borderBottom={'1px solid white'} borderRadius={'sm'}/>
+                        <Box display='inline-block' bg={'#043952'} w='25px' h='25px' mx={5} my={1} borderY={'1px solid white'} borderRadius={'sm'}/>
                         - terminy zajęte
 
                         <Box w={'100%'} h={1}/>
