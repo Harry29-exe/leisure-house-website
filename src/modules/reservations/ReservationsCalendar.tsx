@@ -60,7 +60,7 @@ const ReservationsCalendar = () => {
 
                     <Flex w='100%' p={4} fontSize={'25px'} justifyItems={'center'} flexWrap='wrap' pos='relative'
                           border={'2px solid white'} borderRadius={'2xl'} overflow={'hidden'} zIndex={1}>
-                        <Box display='inline-block' bg={'#08a1d2'} w='25px' h='25px' mx={5} my={1} borderRadius={'sm'}/>
+                        <Box display='inline-block' bg={'#08a1d2'} w='25px' h='25px' mx={5} my={1} borderBottom={'1px solid white'} borderRadius={'sm'}/>
                         - terminy zajęte
 
                         <Box w={'100%'} h={1}/>
