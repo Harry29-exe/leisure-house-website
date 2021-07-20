@@ -26,7 +26,7 @@ const NewsPage = () => {
             <VStack w={['95%', '90%', '80%', '75%']} mx='auto' pos='relative' zIndex={1} overflow={'hidden'}
                     borderRadius={'2xl'} border={'2px solid white'} spacing={0}>
 
-                <Box fontSize={'2rem'} fontWeight={400} mt={4} px={'2.5%'} textAlign='center' w='100%'>
+                <Box fontSize={['xl', null, null, '2xl']} fontWeight={600} mt={4} px={'2.5%'} textAlign='center' w='100%'>
                     {state.socialMediaDescription}
                 </Box>
                 <Flex w='100%' flexWrap='wrap' justifyContent={'center'}>
@@ -58,7 +58,7 @@ const SocialMedium = (props: { name: string, color: string, link: string }) => {
     return (
         <Center as={Link} href={props.link} border={"2px solid"} m={[4, null, '2.5%']}
                 w={['90%', null, '45%']} fontWeight={600} pos={'relative'} zIndex={1} overflow={'hidden'}
-                borderColor={"white"} borderRadius={'xl'} minH='100px' isExternal>
+                borderColor={"white"} borderRadius={'xl'} minH='100px' isExternal fontSize={'xl'}>
 
             {props.name}
 
