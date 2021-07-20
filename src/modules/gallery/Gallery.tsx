@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import {Box, Center, Image} from "@chakra-ui/react";
+import {Box, Center, Image, Spinner} from "@chakra-ui/react";
 import {BiLeftArrow, BiRightArrow} from "react-icons/all";
 import {websiteAddress} from "../../config/Address";
 
@@ -11,10 +11,17 @@ interface GalleryProps {
 export const Gallery = (props: GalleryProps) => {
     const images = props.images;
     const [activeImage, setActiveImage] = useState<number>(props.activeImageIndex);
+    const [isLoaded, setLoaded] = useState<boolean>(false);
 
-    const nextImage = () => setActiveImage(activeImage + 1 >= images.length ? 0 : activeImage + 1);
+    const nextImage = () => {
+        setLoaded(false);
+        setActiveImage(activeImage + 1 >= images.length ? 0 : activeImage + 1);
+    }
 
-    const prevImage = () => setActiveImage(activeImage - 1 <= 0 ? images.length - 1 : activeImage - 1);
+    const prevImage = () => {
+        setLoaded(false);
+        setActiveImage(activeImage - 1 <= 0 ? images.length - 1 : activeImage - 1);
+    }
 
     return (
         <Box w='100%' h='100vh' pos='relative' borderRadius={'2xl'} overflow='hidden'>
@@ -22,9 +29,16 @@ export const Gallery = (props: GalleryProps) => {
             <ImageChangeButton onClick={prevImage} direction='left'/>
 
             <Center pos='relative' w='100%' h='100%' top={0} left={0}>
-                <Image maxH='100%' h='100%' w='100%' objectFit='contain'
+                <Image maxH='100%' h='100%' w='100%' objectFit='contain' onLoad={() => setLoaded(true)}
                        src={`${websiteAddress}/images/${images[activeImage]}`} alt={images[activeImage]}
                 />
+
+                {!isLoaded &&
+                <Center pos='absolute' top={0} left={0} w='100%' h='100%'>
+                    <Spinner minH={'250px'} minW={'250px'} thickness={'15px'} speed={'1s'}
+                             color={'primary.600'} emptyColor={'gray.600'}/>
+                </Center>
+                }
             </Center>
 
             <ImageChangeButton onClick={nextImage} direction={'right'}/>

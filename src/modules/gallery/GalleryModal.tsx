@@ -21,7 +21,8 @@ const GalleryModal = (props: GalleryModalParams) => {
 
                     <Gallery activeImageIndex={props.activeImage} images={props.imagesArray}/>
 
-                    <Box pos='absolute' w='100%' h='100%' top={0} left={0} bg={'gray.700'} opacity={1} zIndex={-1}/>
+                    <Box pos='absolute' w='100%' h='100%' top={0} left={0} bg={'gray.700'}
+                         opacity={1} zIndex={-1}/>
                 </ModalBody>
 
                 <ModalCloseButton onClick={props.onClose} fontSize={'1.5rem'}/>
